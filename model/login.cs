@@ -1,14 +1,16 @@
-﻿using System;
+﻿using CheckList.config;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CheckList.config;
 
-namespace CheckList.model
+
+namespace CheckList.control
 {
-    class Login
+   public class Login
     {
+        //Conexao.objCnx.ConnectionString = Conexao.conexao;
 
     }
 }

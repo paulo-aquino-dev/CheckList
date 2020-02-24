@@ -1,15 +1,8 @@
-﻿using CheckList.control;
+﻿using CheckList.config;
+using CheckList.control;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
-using CheckList.config;
 
 namespace CheckList.view
 {
@@ -22,6 +15,9 @@ namespace CheckList.view
 
         private void Login_Load(object sender, EventArgs e)
         {
+            // TODO: esta linha de código carrega dados na tabela 'winoverDataSet.funcionarios'. Você pode movê-la ou removê-la conforme necessário.
+            //this.funcionariosTableAdapter.Fill(this.winoverDataSet.funcionarios);
+
             try
             {
                 //CONEXAO BD LOGIN/LOGOUT
@@ -50,11 +46,29 @@ namespace CheckList.view
                 while (Conexao.objFunc.Read())
                 {
                     Console.WriteLine(Conexao.objFunc[0]);
-                    MessageBox.Show(Conexao.objFunc[0].ToString());
+                    //MessageBox.Show(Conexao.objFunc[0].ToString());
+                    //MessageBox.Show(winoverDataSet.funcionarios.nomeColumn.);:
                 }
+                //txtNome.Text = Usuarios.Nome;
+                //txtIdade.Text = Usuarios.Idade.ToString();
             }
-            txtNome.Text = Usuarios.Nome;
-            txtIdade.Text = Usuarios.Idade.ToString();
         }
+
+        private void PnlLeft_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void TxtSenha_Enter(object sender, EventArgs e)
+        {
+            txtSenha.isPassword = true;
+        }
+
+        private void BtnVerSenha_MouseHover(object sender, EventArgs e)
+        {
+            txtSenha.isPassword = false;
+        }
+
+        
     }
 }
