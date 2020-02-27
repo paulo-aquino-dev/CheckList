@@ -35,11 +35,11 @@
             this.winoverDataSet = new CheckList.winoverDataSet();
             this.funcionariosTableAdapter = new CheckList.winoverDataSetTableAdapters.funcionariosTableAdapter();
             this.pnlFill = new System.Windows.Forms.Panel();
+            this.txtSenha = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.txtLogin = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.btnVerSenha = new Bunifu.Framework.UI.BunifuImageButton();
             this.pcbUser = new System.Windows.Forms.PictureBox();
             this.btnLogar = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.txtSenha = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.txtLogin = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.pnlLeft = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.pcbLogo = new System.Windows.Forms.PictureBox();
             this.lblFooter = new System.Windows.Forms.Label();
@@ -89,6 +89,45 @@
             this.pnlFill.Name = "pnlFill";
             this.pnlFill.Size = new System.Drawing.Size(412, 448);
             this.pnlFill.TabIndex = 1;
+            // 
+            // txtSenha
+            // 
+            this.txtSenha.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSenha.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSenha.ForeColor = System.Drawing.Color.White;
+            this.txtSenha.HintForeColor = System.Drawing.Color.White;
+            this.txtSenha.HintText = "Senha";
+            this.txtSenha.isPassword = false;
+            this.txtSenha.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(174)))), ((int)(((byte)(180)))));
+            this.txtSenha.LineIdleColor = System.Drawing.Color.Gray;
+            this.txtSenha.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(254)))), ((int)(((byte)(254)))));
+            this.txtSenha.LineThickness = 3;
+            this.txtSenha.Location = new System.Drawing.Point(38, 313);
+            this.txtSenha.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.txtSenha.Name = "txtSenha";
+            this.txtSenha.Size = new System.Drawing.Size(343, 35);
+            this.txtSenha.TabIndex = 3;
+            this.txtSenha.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtSenha.Enter += new System.EventHandler(this.TxtSenha_Enter);
+            // 
+            // txtLogin
+            // 
+            this.txtLogin.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtLogin.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLogin.ForeColor = System.Drawing.Color.White;
+            this.txtLogin.HintForeColor = System.Drawing.Color.White;
+            this.txtLogin.HintText = "Login";
+            this.txtLogin.isPassword = false;
+            this.txtLogin.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(174)))), ((int)(((byte)(180)))));
+            this.txtLogin.LineIdleColor = System.Drawing.Color.Gray;
+            this.txtLogin.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(254)))), ((int)(((byte)(254)))));
+            this.txtLogin.LineThickness = 3;
+            this.txtLogin.Location = new System.Drawing.Point(38, 228);
+            this.txtLogin.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.txtLogin.Name = "txtLogin";
+            this.txtLogin.Size = new System.Drawing.Size(343, 35);
+            this.txtLogin.TabIndex = 2;
+            this.txtLogin.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // btnVerSenha
             // 
@@ -141,45 +180,7 @@
             this.btnLogar.Size = new System.Drawing.Size(172, 44);
             this.btnLogar.TabIndex = 5;
             this.btnLogar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtSenha
-            // 
-            this.txtSenha.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSenha.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSenha.ForeColor = System.Drawing.Color.White;
-            this.txtSenha.HintForeColor = System.Drawing.Color.White;
-            this.txtSenha.HintText = "Senha";
-            this.txtSenha.isPassword = false;
-            this.txtSenha.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(174)))), ((int)(((byte)(180)))));
-            this.txtSenha.LineIdleColor = System.Drawing.Color.Gray;
-            this.txtSenha.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(254)))), ((int)(((byte)(254)))));
-            this.txtSenha.LineThickness = 3;
-            this.txtSenha.Location = new System.Drawing.Point(38, 313);
-            this.txtSenha.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(343, 35);
-            this.txtSenha.TabIndex = 3;
-            this.txtSenha.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtSenha.Enter += new System.EventHandler(this.TxtSenha_Enter);
-            // 
-            // txtLogin
-            // 
-            this.txtLogin.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtLogin.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLogin.ForeColor = System.Drawing.Color.White;
-            this.txtLogin.HintForeColor = System.Drawing.Color.White;
-            this.txtLogin.HintText = "Login";
-            this.txtLogin.isPassword = false;
-            this.txtLogin.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(174)))), ((int)(((byte)(180)))));
-            this.txtLogin.LineIdleColor = System.Drawing.Color.Gray;
-            this.txtLogin.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(254)))), ((int)(((byte)(254)))));
-            this.txtLogin.LineThickness = 3;
-            this.txtLogin.Location = new System.Drawing.Point(38, 228);
-            this.txtLogin.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.txtLogin.Name = "txtLogin";
-            this.txtLogin.Size = new System.Drawing.Size(343, 35);
-            this.txtLogin.TabIndex = 2;
-            this.txtLogin.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnLogar.Click += new System.EventHandler(this.BtnLogar_Click);
             // 
             // pnlLeft
             // 

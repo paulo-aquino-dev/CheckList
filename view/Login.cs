@@ -1,8 +1,10 @@
 ﻿using CheckList.config;
 using CheckList.control;
+using CheckList.view.utils;
 using System;
 using System.Data;
 using System.Windows.Forms;
+using Message = CheckList.view.utils.Message;
 
 namespace CheckList.view
 {
@@ -27,9 +29,11 @@ namespace CheckList.view
                 Conexao.objCnx.Open();
             }
             catch (Exception Erro)
-            {
-                MessageBox.Show("Erro ==> " + Erro.Message, "Erro ao Conectar ao Banco de Dados",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+{
+                Msg formMsg2 = new Msg();
+                Message.Msg = "ERRO: " + Erro.Message;
+                Message.Icone = "ERRO";
+                formMsg2.ShowDialog();
             }
 
             string strSql = "SELECT nome FROM funcionarios WHERE matricula = 2191";
@@ -69,6 +73,12 @@ namespace CheckList.view
             txtSenha.isPassword = false;
         }
 
-        
+        private void BtnLogar_Click(object sender, EventArgs e)
+        {
+            Msg formMsg = new Msg();
+            Message.Msg = "Login Correto: Bem Vindo ";
+            Message.Icone = "OK";
+            formMsg.ShowDialog();
+        }
     }
 }

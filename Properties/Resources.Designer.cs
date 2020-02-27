@@ -73,9 +73,29 @@ namespace CheckList.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icone_error {
+            get {
+                object obj = ResourceManager.GetObject("icone-error", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icone_hide {
             get {
                 object obj = ResourceManager.GetObject("icone-hide", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icone_ok {
+            get {
+                object obj = ResourceManager.GetObject("icone-ok", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -106,6 +126,16 @@ namespace CheckList.Properties {
         internal static System.Drawing.Bitmap icone_winover {
             get {
                 object obj = ResourceManager.GetObject("icone-winover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icone_X {
+            get {
+                object obj = ResourceManager.GetObject("icone-X", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

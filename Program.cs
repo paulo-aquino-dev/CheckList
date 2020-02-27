@@ -1,4 +1,5 @@
 ﻿using CheckList.view;
+using CheckList.view.utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace CheckList
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ChkList());
+            Application.Run(new login());
         }
     }
 }
