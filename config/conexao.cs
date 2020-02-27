@@ -9,7 +9,7 @@ using MySql.Data.MySqlClient;
 
 namespace CheckList.config
 {
-    public class Conexao
+    public class Usuarios
     {
         public static MySqlConnection objCnx = new MySqlConnection();
 

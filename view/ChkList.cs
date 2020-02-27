@@ -35,9 +35,16 @@ namespace CheckList.view
             }
         }
 
-        private void DpdHead_onItemSelected(object sender, EventArgs e)
+       
+
+        private void ChkList_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void BunifuDropdown2_onItemSelected(object sender, EventArgs e)
+        {
+           
         }
     }
 }

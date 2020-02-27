@@ -51,7 +51,6 @@
             this.lblStatusMonitor = new System.Windows.Forms.Label();
             this.lblHead = new System.Windows.Forms.Label();
             this.ttpBtn = new System.Windows.Forms.ToolTip(this.components);
-            this.bunifuDropdown1 = new Bunifu.Framework.UI.BunifuDropdown();
             ((System.ComponentModel.ISupportInitialize)(this.btnHead)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMouse)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnTeclado)).BeginInit();
@@ -166,7 +165,7 @@
             // bunifuSeparator1
             // 
             this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuSeparator1.LineColor = System.Drawing.Color.DimGray;
+            this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
             this.bunifuSeparator1.LineThickness = 1;
             this.bunifuSeparator1.Location = new System.Drawing.Point(0, 195);
             this.bunifuSeparator1.Name = "bunifuSeparator1";
@@ -268,28 +267,11 @@
             this.ttpBtn.AutomaticDelay = 200;
             this.ttpBtn.IsBalloon = true;
             // 
-            // bunifuDropdown1
-            // 
-            this.bunifuDropdown1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuDropdown1.BorderRadius = 3;
-            this.bunifuDropdown1.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuDropdown1.ForeColor = System.Drawing.Color.White;
-            this.bunifuDropdown1.Items = new string[] {
-        "gigi"};
-            this.bunifuDropdown1.Location = new System.Drawing.Point(211, 133);
-            this.bunifuDropdown1.Name = "bunifuDropdown1";
-            this.bunifuDropdown1.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuDropdown1.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.bunifuDropdown1.selectedIndex = -1;
-            this.bunifuDropdown1.Size = new System.Drawing.Size(217, 35);
-            this.bunifuDropdown1.TabIndex = 13;
-            // 
             // ChkList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 800);
-            this.Controls.Add(this.bunifuDropdown1);
             this.Controls.Add(this.lblHead);
             this.Controls.Add(this.lblStatusMonitor);
             this.Controls.Add(this.lblStatusTeclado);
@@ -308,6 +290,7 @@
             this.Name = "ChkList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ChkList";
+            this.Load += new System.EventHandler(this.ChkList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.btnHead)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMouse)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnTeclado)).EndInit();
@@ -340,6 +323,5 @@
         private System.Windows.Forms.Label lblStatusHead;
         private System.Windows.Forms.Label lblHead;
         private System.Windows.Forms.ToolTip ttpBtn;
-        private Bunifu.Framework.UI.BunifuDropdown bunifuDropdown1;
     }
 }

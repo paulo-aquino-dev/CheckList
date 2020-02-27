@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CheckList.config;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace CheckList.control
 {
-    class loginControl
+    public class loginControl
     {
-
+        
     }
 }
