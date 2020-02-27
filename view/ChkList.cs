@@ -24,11 +24,20 @@ namespace CheckList.view
             if (backColor.Equals("Green"))
             {
                 btnHead.BackColor = Color.Red;
+                lblHead.Text = "DANIFICADO";
+                lblHead.ForeColor = Color.Red;
             }
             else
             {
                 btnHead.BackColor = Color.Green;
+                lblHead.Text = "OK";
+                lblHead.ForeColor = Color.Green;
             }
+        }
+
+        private void DpdHead_onItemSelected(object sender, EventArgs e)
+        {
+
         }
     }
 }

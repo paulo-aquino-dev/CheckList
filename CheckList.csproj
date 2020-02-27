@@ -128,5 +128,8 @@
     <None Include="view\img\icone-unhide.png" />
     <None Include="view\img\icone-user.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="view\utils\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
