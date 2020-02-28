@@ -135,6 +135,7 @@
     <None Include="Resources\icone-error.png" />
     <None Include="Resources\icone-ok.png" />
     <None Include="Resources\icone-X.png" />
+    <None Include="view\img\icone-checklist-min.png" />
     <Content Include="view\img\icone-checklist.png" />
     <Content Include="view\img\icone-winover.png" />
     <None Include="view\img\icone-hide.png" />

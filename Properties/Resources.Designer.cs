@@ -73,6 +73,16 @@ namespace CheckList.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icone_checklist_min {
+            get {
+                object obj = ResourceManager.GetObject("icone-checklist-min", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icone_error {
             get {
                 object obj = ResourceManager.GetObject("icone-error", resourceCulture);

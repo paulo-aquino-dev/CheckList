@@ -124,22 +124,25 @@
   <data name="icone-checklist" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\view\img\icone-checklist.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icone-hide" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\view\img\icone-hide.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icone-unhide" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\view\img\icone-unhide.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icone-hide" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\view\img\icone-hide.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icone-X" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icone-X.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icone-error" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icone-error.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icone-ok" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icone-ok.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="icone-user" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\view\img\icone-user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icone-X" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icone-X.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icone-ok" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icone-ok.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icone-checklist-min" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\view\img\icone-checklist-min.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
