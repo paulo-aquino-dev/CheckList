@@ -18,7 +18,7 @@ namespace CheckList
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ChkList());
+            Application.Run(new Audio());
         }
     }
 }

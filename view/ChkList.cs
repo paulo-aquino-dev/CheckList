@@ -152,10 +152,16 @@ namespace CheckList.view
             if (headStatus.Equals("") || monitorStatus.Equals("") || tecladoStatus.Equals("") || monitorStatus.Equals(""))
             {
                 Msg formMsg = new Msg();
-                Message.Msg = "Login Correto: Bem Vindo ";
+                Message.Msg = "FAVOR SELECIONAR TODOS OS CAMPOS";
+                Message.Icone = "ERRO";
+                formMsg.ShowDialog();
+            }
+            else
+            {
+                Msg formMsg = new Msg();
+                Message.Msg = cmbHead.SelectedItem.ToString();
                 Message.Icone = "OK";
                 formMsg.ShowDialog();
-
             }
         }
     }
