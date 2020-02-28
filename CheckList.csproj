@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AudioDeviceCmdlets, Version=3.0.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\AudioDeviceCmdlets.3.0.0.2\lib\net45\AudioDeviceCmdlets.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu_UI_v1.5.3">
       <HintPath>..\..\..\Desktop\backup\Utilidades\BUNIFU\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
@@ -47,6 +50,9 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Management.Automation, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\System.Management.Automation_PowerShell_3.0.6.3.9600.17400\lib\net40\System.Management.Automation.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -82,6 +88,12 @@
     <Compile Include="view\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="view\teste.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\teste.Designer.cs">
+      <DependentUpon>teste.cs</DependentUpon>
+    </Compile>
     <Compile Include="view\utils\Message.cs" />
     <Compile Include="view\utils\Msg.cs">
       <SubType>Form</SubType>
@@ -113,9 +125,13 @@
     <EmbeddedResource Include="view\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="view\teste.resx">
+      <DependentUpon>teste.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="view\utils\Msg.resx">
       <DependentUpon>Msg.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

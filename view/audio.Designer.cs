@@ -234,6 +234,7 @@
             this.Controls.Add(this.btnMute);
             this.Name = "Audio";
             this.Text = "audio";
+            this.Load += new System.EventHandler(this.Audio_Load);
             this.ResumeLayout(false);
 
         }
