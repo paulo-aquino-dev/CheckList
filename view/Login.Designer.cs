@@ -46,6 +46,7 @@
             this.pcbChecklist = new System.Windows.Forms.PictureBox();
             this.lblTitulo = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.ttpBtn = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.funcionariosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.winoverDataSet)).BeginInit();
             this.pnlFill.SuspendLayout();
@@ -161,6 +162,7 @@
             this.txtSenha.Size = new System.Drawing.Size(343, 35);
             this.txtSenha.TabIndex = 3;
             this.txtSenha.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.ttpBtn.SetToolTip(this.txtSenha, "SENHA LOGIN/LOGOUT");
             this.txtSenha.Enter += new System.EventHandler(this.TxtSenha_Enter);
             // 
             // txtLogin
@@ -181,6 +183,7 @@
             this.txtLogin.Size = new System.Drawing.Size(343, 35);
             this.txtLogin.TabIndex = 2;
             this.txtLogin.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.ttpBtn.SetToolTip(this.txtLogin, "USUARIO LOGIN/LOGOUT");
             // 
             // pnlLeft
             // 
@@ -248,6 +251,11 @@
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "Sistema de Checklist";
             // 
+            // ttpBtn
+            // 
+            this.ttpBtn.AutomaticDelay = 200;
+            this.ttpBtn.IsBalloon = true;
+            // 
             // login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -256,6 +264,7 @@
             this.Controls.Add(this.pnlFill);
             this.Controls.Add(this.pnlLeft);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "login";
@@ -292,5 +301,6 @@
         private System.Windows.Forms.PictureBox pcbUser;
         private Bunifu.Framework.UI.BunifuImageButton btnVerSenha;
         private System.Windows.Forms.PictureBox pcbLogo;
+        private System.Windows.Forms.ToolTip ttpBtn;
     }
 }

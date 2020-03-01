@@ -72,7 +72,5 @@ namespace CheckList.view
             Message.Icone = "OK";
             formMsg.ShowDialog();
         }
-
-
     }
 }

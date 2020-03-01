@@ -86,12 +86,10 @@ namespace CheckList.view
             String head = "";
             foreach (ManagementObject soundDevice in mos.Get())
             {
-                String sDeviceId = soundDevice.GetPropertyValue("DeviceId").ToString();
                 String sDeviceName = soundDevice.GetPropertyValue("Name").ToString();
-                String sDeviceStatus = soundDevice.GetPropertyValue("Status").ToString();
                 
-                Console.WriteLine("Device Name = {0} - Status = {1}", sDeviceName, sDeviceStatus);
-                if (sDeviceName.Equals("Dispositivo de áudio USB"))
+                Console.WriteLine("Device Name = {0}", sDeviceName);
+                if (sDeviceName.Equals("Dispositivo de áudio USB") || sDeviceName.Equals("Realtek High Definition Audio"))
                 {
                     head = sDeviceName;
                 }

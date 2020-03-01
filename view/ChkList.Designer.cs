@@ -32,10 +32,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChkList));
             this.elipseForm = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.elipseBtnHead = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.btnHead = new Bunifu.Framework.UI.BunifuImageButton();
             this.elipseBtnMouse = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.btnMouse = new Bunifu.Framework.UI.BunifuImageButton();
             this.elipseBtnTeclado = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.btnTeclado = new Bunifu.Framework.UI.BunifuImageButton();
             this.elipseBtnMonitor = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.btnMonitor = new Bunifu.Framework.UI.BunifuImageButton();
             this.bdcTop = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.pnlTop = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.label5 = new System.Windows.Forms.Label();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.bunifuSeparator3 = new Bunifu.Framework.UI.BunifuSeparator();
             this.lblStatusHead = new System.Windows.Forms.Label();
@@ -59,17 +65,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnEnviar = new Bunifu.Framework.UI.BunifuThinButton2();
             this.pnlFooter = new Bunifu.Framework.UI.BunifuGradientPanel();
-            this.pnlTop = new Bunifu.Framework.UI.BunifuGradientPanel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.btnMonitor = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btnTeclado = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btnMouse = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btnHead = new Bunifu.Framework.UI.BunifuImageButton();
-            this.pnlTop.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMonitor)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnTeclado)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMouse)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnHead)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMouse)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnTeclado)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMonitor)).BeginInit();
+            this.pnlTop.SuspendLayout();
             this.SuspendLayout();
             // 
             // elipseForm
@@ -82,20 +82,81 @@
             this.elipseBtnHead.ElipseRadius = 20;
             this.elipseBtnHead.TargetControl = this.btnHead;
             // 
+            // btnHead
+            // 
+            this.btnHead.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(176)))), ((int)(((byte)(182)))));
+            this.btnHead.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHead.Image = ((System.Drawing.Image)(resources.GetObject("btnHead.Image")));
+            this.btnHead.ImageActive = null;
+            this.btnHead.Location = new System.Drawing.Point(23, 51);
+            this.btnHead.Name = "btnHead";
+            this.btnHead.Size = new System.Drawing.Size(143, 143);
+            this.btnHead.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btnHead.TabIndex = 0;
+            this.btnHead.TabStop = false;
+            this.ttpBtn.SetToolTip(this.btnHead, "Clique para alterar o status!");
+            this.btnHead.Zoom = 5;
+            this.btnHead.Click += new System.EventHandler(this.BtnHead_Click);
+            // 
             // elipseBtnMouse
             // 
             this.elipseBtnMouse.ElipseRadius = 20;
             this.elipseBtnMouse.TargetControl = this.btnMouse;
+            // 
+            // btnMouse
+            // 
+            this.btnMouse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(176)))), ((int)(((byte)(182)))));
+            this.btnMouse.Image = ((System.Drawing.Image)(resources.GetObject("btnMouse.Image")));
+            this.btnMouse.ImageActive = null;
+            this.btnMouse.Location = new System.Drawing.Point(23, 232);
+            this.btnMouse.Name = "btnMouse";
+            this.btnMouse.Size = new System.Drawing.Size(143, 143);
+            this.btnMouse.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btnMouse.TabIndex = 1;
+            this.btnMouse.TabStop = false;
+            this.ttpBtn.SetToolTip(this.btnMouse, "Clique para alterar o status!");
+            this.btnMouse.Zoom = 5;
+            this.btnMouse.Click += new System.EventHandler(this.BtnMouse_Click);
             // 
             // elipseBtnTeclado
             // 
             this.elipseBtnTeclado.ElipseRadius = 20;
             this.elipseBtnTeclado.TargetControl = this.btnTeclado;
             // 
+            // btnTeclado
+            // 
+            this.btnTeclado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(176)))), ((int)(((byte)(182)))));
+            this.btnTeclado.Image = ((System.Drawing.Image)(resources.GetObject("btnTeclado.Image")));
+            this.btnTeclado.ImageActive = null;
+            this.btnTeclado.Location = new System.Drawing.Point(582, 51);
+            this.btnTeclado.Name = "btnTeclado";
+            this.btnTeclado.Size = new System.Drawing.Size(143, 143);
+            this.btnTeclado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btnTeclado.TabIndex = 2;
+            this.btnTeclado.TabStop = false;
+            this.ttpBtn.SetToolTip(this.btnTeclado, "Clique para alterar o status!");
+            this.btnTeclado.Zoom = 5;
+            this.btnTeclado.Click += new System.EventHandler(this.BtnTeclado_Click);
+            // 
             // elipseBtnMonitor
             // 
             this.elipseBtnMonitor.ElipseRadius = 20;
             this.elipseBtnMonitor.TargetControl = this.btnMonitor;
+            // 
+            // btnMonitor
+            // 
+            this.btnMonitor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(176)))), ((int)(((byte)(182)))));
+            this.btnMonitor.Image = ((System.Drawing.Image)(resources.GetObject("btnMonitor.Image")));
+            this.btnMonitor.ImageActive = null;
+            this.btnMonitor.Location = new System.Drawing.Point(582, 232);
+            this.btnMonitor.Name = "btnMonitor";
+            this.btnMonitor.Size = new System.Drawing.Size(143, 143);
+            this.btnMonitor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btnMonitor.TabIndex = 3;
+            this.btnMonitor.TabStop = false;
+            this.ttpBtn.SetToolTip(this.btnMonitor, "Clique para alterar o status!");
+            this.btnMonitor.Zoom = 5;
+            this.btnMonitor.Click += new System.EventHandler(this.BtnMonitor_Click);
             // 
             // bdcTop
             // 
@@ -103,6 +164,34 @@
             this.bdcTop.Horizontal = true;
             this.bdcTop.TargetControl = this.pnlTop;
             this.bdcTop.Vertical = true;
+            // 
+            // pnlTop
+            // 
+            this.pnlTop.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlTop.BackgroundImage")));
+            this.pnlTop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlTop.Controls.Add(this.label5);
+            this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTop.GradientBottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(254)))), ((int)(((byte)(254)))));
+            this.pnlTop.GradientBottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(47)))), ((int)(((byte)(63)))));
+            this.pnlTop.GradientTopLeft = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(254)))), ((int)(((byte)(254)))));
+            this.pnlTop.GradientTopRight = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(254)))), ((int)(((byte)(254)))));
+            this.pnlTop.Location = new System.Drawing.Point(0, 0);
+            this.pnlTop.Name = "pnlTop";
+            this.pnlTop.Quality = 10;
+            this.pnlTop.Size = new System.Drawing.Size(1110, 31);
+            this.pnlTop.TabIndex = 4;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(398, 2);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(293, 25);
+            this.label5.TabIndex = 27;
+            this.label5.Text = "SISTEMA DE CHECKLIST";
             // 
             // bunifuSeparator1
             // 
@@ -310,7 +399,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Verdana", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(272, 67);
+            this.label1.Location = new System.Drawing.Point(180, 67);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(120, 25);
             this.label1.TabIndex = 22;
@@ -320,7 +409,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Verdana", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(833, 67);
+            this.label2.Location = new System.Drawing.Point(741, 67);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(119, 25);
             this.label2.TabIndex = 23;
@@ -330,7 +419,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Verdana", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(272, 250);
+            this.label3.Location = new System.Drawing.Point(180, 250);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(96, 25);
             this.label3.TabIndex = 24;
@@ -340,7 +429,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Verdana", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(833, 250);
+            this.label4.Location = new System.Drawing.Point(741, 250);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(127, 25);
             this.label4.TabIndex = 25;
@@ -387,95 +476,6 @@
             this.pnlFooter.Size = new System.Drawing.Size(1110, 10);
             this.pnlFooter.TabIndex = 5;
             // 
-            // pnlTop
-            // 
-            this.pnlTop.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlTop.BackgroundImage")));
-            this.pnlTop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlTop.Controls.Add(this.label5);
-            this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTop.GradientBottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(254)))), ((int)(((byte)(254)))));
-            this.pnlTop.GradientBottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(47)))), ((int)(((byte)(63)))));
-            this.pnlTop.GradientTopLeft = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(254)))), ((int)(((byte)(254)))));
-            this.pnlTop.GradientTopRight = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(254)))), ((int)(((byte)(254)))));
-            this.pnlTop.Location = new System.Drawing.Point(0, 0);
-            this.pnlTop.Name = "pnlTop";
-            this.pnlTop.Quality = 10;
-            this.pnlTop.Size = new System.Drawing.Size(1110, 31);
-            this.pnlTop.TabIndex = 4;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(398, 2);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(293, 25);
-            this.label5.TabIndex = 27;
-            this.label5.Text = "SISTEMA DE CHECKLIST";
-            // 
-            // btnMonitor
-            // 
-            this.btnMonitor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(176)))), ((int)(((byte)(182)))));
-            this.btnMonitor.Image = ((System.Drawing.Image)(resources.GetObject("btnMonitor.Image")));
-            this.btnMonitor.ImageActive = null;
-            this.btnMonitor.Location = new System.Drawing.Point(582, 232);
-            this.btnMonitor.Name = "btnMonitor";
-            this.btnMonitor.Size = new System.Drawing.Size(143, 143);
-            this.btnMonitor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.btnMonitor.TabIndex = 3;
-            this.btnMonitor.TabStop = false;
-            this.ttpBtn.SetToolTip(this.btnMonitor, "Clique para alterar o status!");
-            this.btnMonitor.Zoom = 5;
-            this.btnMonitor.Click += new System.EventHandler(this.BtnMonitor_Click);
-            // 
-            // btnTeclado
-            // 
-            this.btnTeclado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(176)))), ((int)(((byte)(182)))));
-            this.btnTeclado.Image = ((System.Drawing.Image)(resources.GetObject("btnTeclado.Image")));
-            this.btnTeclado.ImageActive = null;
-            this.btnTeclado.Location = new System.Drawing.Point(582, 51);
-            this.btnTeclado.Name = "btnTeclado";
-            this.btnTeclado.Size = new System.Drawing.Size(143, 143);
-            this.btnTeclado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.btnTeclado.TabIndex = 2;
-            this.btnTeclado.TabStop = false;
-            this.ttpBtn.SetToolTip(this.btnTeclado, "Clique para alterar o status!");
-            this.btnTeclado.Zoom = 5;
-            this.btnTeclado.Click += new System.EventHandler(this.BtnTeclado_Click);
-            // 
-            // btnMouse
-            // 
-            this.btnMouse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(176)))), ((int)(((byte)(182)))));
-            this.btnMouse.Image = ((System.Drawing.Image)(resources.GetObject("btnMouse.Image")));
-            this.btnMouse.ImageActive = null;
-            this.btnMouse.Location = new System.Drawing.Point(23, 232);
-            this.btnMouse.Name = "btnMouse";
-            this.btnMouse.Size = new System.Drawing.Size(143, 143);
-            this.btnMouse.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.btnMouse.TabIndex = 1;
-            this.btnMouse.TabStop = false;
-            this.ttpBtn.SetToolTip(this.btnMouse, "Clique para alterar o status!");
-            this.btnMouse.Zoom = 5;
-            this.btnMouse.Click += new System.EventHandler(this.BtnMouse_Click);
-            // 
-            // btnHead
-            // 
-            this.btnHead.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(176)))), ((int)(((byte)(182)))));
-            this.btnHead.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnHead.Image = ((System.Drawing.Image)(resources.GetObject("btnHead.Image")));
-            this.btnHead.ImageActive = null;
-            this.btnHead.Location = new System.Drawing.Point(23, 51);
-            this.btnHead.Name = "btnHead";
-            this.btnHead.Size = new System.Drawing.Size(143, 143);
-            this.btnHead.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.btnHead.TabIndex = 0;
-            this.btnHead.TabStop = false;
-            this.ttpBtn.SetToolTip(this.btnHead, "Clique para alterar o status!");
-            this.btnHead.Zoom = 5;
-            this.btnHead.Click += new System.EventHandler(this.BtnHead_Click);
-            // 
             // ChkList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -514,12 +514,12 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "INFORME O PROBLEMA...";
             this.Load += new System.EventHandler(this.ChkList_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.btnHead)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMouse)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnTeclado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMonitor)).EndInit();
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMonitor)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnTeclado)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMouse)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnHead)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -32,12 +32,18 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icone-checklist.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="AudioDeviceCmdlets, Version=3.0.0.2, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\AudioDeviceCmdlets.3.0.0.2\lib\net45\AudioDeviceCmdlets.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu_UI_v1.5.3">
       <HintPath>..\..\..\Desktop\backup\Utilidades\BUNIFU\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu_UI_v1.52">
+      <HintPath>..\..\..\..\..\Bunifu_UI_v1.52\Bunifu_UI_v1.52.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="MySql.Data, Version=6.10.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
@@ -88,6 +94,12 @@
     <Compile Include="view\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="view\LoginPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\LoginPrincipal.Designer.cs">
+      <DependentUpon>LoginPrincipal.cs</DependentUpon>
+    </Compile>
     <Compile Include="view\teste.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +137,9 @@
     <EmbeddedResource Include="view\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="view\LoginPrincipal.resx">
+      <DependentUpon>LoginPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="view\teste.resx">
       <DependentUpon>teste.cs</DependentUpon>
     </EmbeddedResource>
@@ -161,6 +176,7 @@
     <None Include="Resources\icone-ok.png" />
     <None Include="Resources\icone-X.png" />
     <None Include="view\img\icone-checklist-min.png" />
+    <Content Include="icone-checklist.ico" />
     <Content Include="view\img\icone-checklist.png" />
     <Content Include="view\img\icone-winover.png" />
     <None Include="view\img\icone-hide.png" />
