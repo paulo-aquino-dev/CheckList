@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -21,6 +22,11 @@ namespace CheckList.view
         int i = 0;
         private void LoginPrincipal_Load(object sender, EventArgs e)
         {
+            string data = DateTime.Now.ToString("yyyy-MM-dd");
+
+            //PEGA O HOSTNAME
+            string hostMaquina = Dns.GetHostName();
+
             timerPgb.Start();
             try
             {
@@ -36,7 +42,8 @@ namespace CheckList.view
                 Message.Icone = "ERRO";
                 formMsg2.ShowDialog();
             }
-            string strSql = "select distinct hostname from logs  where datetime like '2020-02-29 %' and matricula = 2191 and acao = 'ip'";
+
+            string strSql = "select distinct hostname from logs  where datetime like '2020-02-29 %' and hostname like '" + hostMaquina+ " %' and acao = 'ip'";
 
             //conexão com o comando
             config.Usuarios.objCmd.Connection = config.Usuarios.objCnx;
@@ -49,16 +56,17 @@ namespace CheckList.view
             {
                 while (config.Usuarios.objFunc.Read())
                 {
-                    //string hostname = config.Usuarios.objFunc[0].ToString();
-                    //var teste = hostname.Split(' ');
-                    //hostname = teste[0];
-                    //Console.WriteLine(hostname);
-                    string hostname = "WOCCOP0001";
-                    if(hostname.Contains("WOCCOP")){
-                        string teste = hostname.Substring(6);
-                        string localizacao = "PA" + teste;
-                        Console.WriteLine(localizacao);
-                    }
+                    string hostname = config.Usuarios.objFunc[0].ToString();
+                    var teste = hostname.Split(' ');
+                    hostname = teste[0];
+                    Console.WriteLine(hostname);
+
+                    //string hostname2 = "WOCCOP0001";
+                    //if(hostname.Contains("WOCCOP")){
+                    //    string teste = hostname.Substring(6);
+                    //    string localizacao = "PA" + teste;
+                    //    Console.WriteLine(localizacao);
+                    //}
                     //MessageBox.Show(Conexao.objFunc[0].ToString());
                     //MessageBox.Show(winoverDataSet.funcionarios.nomeColumn.);:
                 }
