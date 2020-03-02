@@ -100,7 +100,6 @@ namespace CheckList.view
                         PA = "MAQUINA TI " + hostname.Substring(7);
                         Console.WriteLine(PA);
                     }
-
                 }
                 else
                 {
@@ -117,7 +116,7 @@ namespace CheckList.view
             if (i <= 100)
             {
                 pgbLogin.Value = i;
-                i += 10;
+                i += 3;
                 if ((i < 2))
                 {
                     lblVerificacao.Text = "Validando Quem Está Logado na P.A.";
@@ -142,17 +141,19 @@ namespace CheckList.view
                 {
                     lblVerificacao.Text = "Validando Quem Está Logado na P.A...";
                 }
-                else if (i == 100)
+                else if (i > 99)
                 {
                     Msg formMsg = new Msg();
                     Message.Msg = "Bem Vindo: " + nome;
                     Message.Icone = "OK";
                     formMsg.ShowDialog();
                     ChkList formCheck = new ChkList();
+                    this.Visible = false;
                     formCheck.ShowDialog();
-                    this.Close();
                 }
             }
         }
+
+       
     }
 }

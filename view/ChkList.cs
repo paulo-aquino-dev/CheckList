@@ -39,7 +39,7 @@ namespace CheckList.view
 
         private void ajustaAudio()
         {
-            for (int i = 0; i < 30; i++)
+            for (int i = 0; i < 100; i++)
             {
                 SendMessageW(this.Handle, WM_APPCOMMAND, this.Handle,
                 (IntPtr)APPCOMMAND_VOLUME_UP);
@@ -63,7 +63,6 @@ namespace CheckList.view
                 {
                     head = sDeviceName;
                 }
-
             }
             if (head.Equals(""))
             {
@@ -216,9 +215,10 @@ namespace CheckList.view
             else
             {
                 Msg formMsg = new Msg();
-                Message.Msg = cmbHead.SelectedItem.ToString();
+                Message.Msg = "CHECKLIST ENVIADO!!!";
                 Message.Icone = "OK";
                 formMsg.ShowDialog();
+                Application.Exit();
             }
         }
 

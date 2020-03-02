@@ -65,11 +65,19 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnEnviar = new Bunifu.Framework.UI.BunifuThinButton2();
             this.pnlFooter = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.lblFooter = new System.Windows.Forms.Label();
+            this.bunifuSeparator2 = new Bunifu.Framework.UI.BunifuSeparator();
+            this.pcbLogo = new System.Windows.Forms.PictureBox();
+            this.lblUsuario = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.btnHead)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMouse)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnTeclado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMonitor)).BeginInit();
             this.pnlTop.SuspendLayout();
+            this.pnlFooter.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // elipseForm
@@ -88,7 +96,7 @@
             this.btnHead.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnHead.Image = ((System.Drawing.Image)(resources.GetObject("btnHead.Image")));
             this.btnHead.ImageActive = null;
-            this.btnHead.Location = new System.Drawing.Point(23, 51);
+            this.btnHead.Location = new System.Drawing.Point(23, 72);
             this.btnHead.Name = "btnHead";
             this.btnHead.Size = new System.Drawing.Size(143, 143);
             this.btnHead.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -108,7 +116,7 @@
             this.btnMouse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(176)))), ((int)(((byte)(182)))));
             this.btnMouse.Image = ((System.Drawing.Image)(resources.GetObject("btnMouse.Image")));
             this.btnMouse.ImageActive = null;
-            this.btnMouse.Location = new System.Drawing.Point(23, 232);
+            this.btnMouse.Location = new System.Drawing.Point(23, 253);
             this.btnMouse.Name = "btnMouse";
             this.btnMouse.Size = new System.Drawing.Size(143, 143);
             this.btnMouse.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -128,7 +136,7 @@
             this.btnTeclado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(176)))), ((int)(((byte)(182)))));
             this.btnTeclado.Image = ((System.Drawing.Image)(resources.GetObject("btnTeclado.Image")));
             this.btnTeclado.ImageActive = null;
-            this.btnTeclado.Location = new System.Drawing.Point(582, 51);
+            this.btnTeclado.Location = new System.Drawing.Point(582, 72);
             this.btnTeclado.Name = "btnTeclado";
             this.btnTeclado.Size = new System.Drawing.Size(143, 143);
             this.btnTeclado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -148,7 +156,7 @@
             this.btnMonitor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(176)))), ((int)(((byte)(182)))));
             this.btnMonitor.Image = ((System.Drawing.Image)(resources.GetObject("btnMonitor.Image")));
             this.btnMonitor.ImageActive = null;
-            this.btnMonitor.Location = new System.Drawing.Point(582, 232);
+            this.btnMonitor.Location = new System.Drawing.Point(582, 253);
             this.btnMonitor.Name = "btnMonitor";
             this.btnMonitor.Size = new System.Drawing.Size(143, 143);
             this.btnMonitor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -169,6 +177,7 @@
             // 
             this.pnlTop.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlTop.BackgroundImage")));
             this.pnlTop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlTop.Controls.Add(this.pcbLogo);
             this.pnlTop.Controls.Add(this.label5);
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTop.GradientBottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(254)))), ((int)(((byte)(254)))));
@@ -178,18 +187,18 @@
             this.pnlTop.Location = new System.Drawing.Point(0, 0);
             this.pnlTop.Name = "pnlTop";
             this.pnlTop.Quality = 10;
-            this.pnlTop.Size = new System.Drawing.Size(1110, 31);
+            this.pnlTop.Size = new System.Drawing.Size(1110, 28);
             this.pnlTop.TabIndex = 4;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(398, 2);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(293, 25);
+            this.label5.Size = new System.Drawing.Size(271, 23);
             this.label5.TabIndex = 27;
             this.label5.Text = "SISTEMA DE CHECKLIST";
             // 
@@ -198,7 +207,7 @@
             this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
             this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
             this.bunifuSeparator1.LineThickness = 1;
-            this.bunifuSeparator1.Location = new System.Drawing.Point(7, 195);
+            this.bunifuSeparator1.Location = new System.Drawing.Point(7, 216);
             this.bunifuSeparator1.Name = "bunifuSeparator1";
             this.bunifuSeparator1.Size = new System.Drawing.Size(1094, 35);
             this.bunifuSeparator1.TabIndex = 5;
@@ -210,7 +219,7 @@
             this.bunifuSeparator3.BackColor = System.Drawing.Color.Transparent;
             this.bunifuSeparator3.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
             this.bunifuSeparator3.LineThickness = 1;
-            this.bunifuSeparator3.Location = new System.Drawing.Point(7, 377);
+            this.bunifuSeparator3.Location = new System.Drawing.Point(7, 398);
             this.bunifuSeparator3.Name = "bunifuSeparator3";
             this.bunifuSeparator3.Size = new System.Drawing.Size(1094, 35);
             this.bunifuSeparator3.TabIndex = 7;
@@ -221,7 +230,7 @@
             // 
             this.lblStatusHead.AutoSize = true;
             this.lblStatusHead.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatusHead.Location = new System.Drawing.Point(181, 110);
+            this.lblStatusHead.Location = new System.Drawing.Point(181, 131);
             this.lblStatusHead.Name = "lblStatusHead";
             this.lblStatusHead.Size = new System.Drawing.Size(218, 23);
             this.lblStatusHead.TabIndex = 8;
@@ -231,7 +240,7 @@
             // 
             this.lblStatusMouse.AutoSize = true;
             this.lblStatusMouse.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatusMouse.Location = new System.Drawing.Point(181, 288);
+            this.lblStatusMouse.Location = new System.Drawing.Point(181, 309);
             this.lblStatusMouse.Name = "lblStatusMouse";
             this.lblStatusMouse.Size = new System.Drawing.Size(218, 23);
             this.lblStatusMouse.TabIndex = 9;
@@ -241,7 +250,7 @@
             // 
             this.lblStatusTeclado.AutoSize = true;
             this.lblStatusTeclado.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatusTeclado.Location = new System.Drawing.Point(742, 110);
+            this.lblStatusTeclado.Location = new System.Drawing.Point(742, 131);
             this.lblStatusTeclado.Name = "lblStatusTeclado";
             this.lblStatusTeclado.Size = new System.Drawing.Size(218, 23);
             this.lblStatusTeclado.TabIndex = 10;
@@ -251,7 +260,7 @@
             // 
             this.lblStatusMonitor.AutoSize = true;
             this.lblStatusMonitor.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatusMonitor.Location = new System.Drawing.Point(742, 288);
+            this.lblStatusMonitor.Location = new System.Drawing.Point(742, 309);
             this.lblStatusMonitor.Name = "lblStatusMonitor";
             this.lblStatusMonitor.Size = new System.Drawing.Size(218, 23);
             this.lblStatusMonitor.TabIndex = 11;
@@ -261,7 +270,7 @@
             // 
             this.lblHead.AutoSize = true;
             this.lblHead.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHead.Location = new System.Drawing.Point(399, 110);
+            this.lblHead.Location = new System.Drawing.Point(399, 131);
             this.lblHead.Name = "lblHead";
             this.lblHead.Size = new System.Drawing.Size(31, 23);
             this.lblHead.TabIndex = 12;
@@ -276,7 +285,7 @@
             // 
             this.cmbHead.DropDownHeight = 200;
             this.cmbHead.Enabled = false;
-            this.cmbHead.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbHead.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbHead.ForeColor = System.Drawing.Color.Black;
             this.cmbHead.FormattingEnabled = true;
             this.cmbHead.IntegralHeight = false;
@@ -284,9 +293,9 @@
             "MAL CONTATO",
             "NÃO FUNCIONA",
             "EQUIPAMENTO DANIFICADO"});
-            this.cmbHead.Location = new System.Drawing.Point(185, 154);
+            this.cmbHead.Location = new System.Drawing.Point(185, 175);
             this.cmbHead.Name = "cmbHead";
-            this.cmbHead.Size = new System.Drawing.Size(281, 31);
+            this.cmbHead.Size = new System.Drawing.Size(281, 26);
             this.cmbHead.TabIndex = 13;
             this.cmbHead.Text = "INFORME O PROBLEMA...";
             // 
@@ -294,7 +303,7 @@
             // 
             this.cmbMouse.DropDownHeight = 200;
             this.cmbMouse.Enabled = false;
-            this.cmbMouse.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbMouse.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbMouse.ForeColor = System.Drawing.Color.Black;
             this.cmbMouse.FormattingEnabled = true;
             this.cmbMouse.IntegralHeight = false;
@@ -304,9 +313,9 @@
             "BOTÃO NÃO FUNCIONA",
             "MOVIMENTAÇÃO RUIM (SETA)",
             "EQUIPAMENTO DANIFICADO"});
-            this.cmbMouse.Location = new System.Drawing.Point(185, 330);
+            this.cmbMouse.Location = new System.Drawing.Point(185, 351);
             this.cmbMouse.Name = "cmbMouse";
-            this.cmbMouse.Size = new System.Drawing.Size(281, 31);
+            this.cmbMouse.Size = new System.Drawing.Size(281, 26);
             this.cmbMouse.TabIndex = 14;
             this.cmbMouse.Text = "INFORME O PROBLEMA...";
             // 
@@ -314,7 +323,7 @@
             // 
             this.cmbTeclado.DropDownHeight = 200;
             this.cmbTeclado.Enabled = false;
-            this.cmbTeclado.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbTeclado.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTeclado.ForeColor = System.Drawing.Color.Black;
             this.cmbTeclado.FormattingEnabled = true;
             this.cmbTeclado.IntegralHeight = false;
@@ -323,9 +332,9 @@
             "MAL CONTATO",
             "TECLADO APAGADO",
             "EQUIPAMENTO DANIFICADO"});
-            this.cmbTeclado.Location = new System.Drawing.Point(746, 154);
+            this.cmbTeclado.Location = new System.Drawing.Point(746, 175);
             this.cmbTeclado.Name = "cmbTeclado";
-            this.cmbTeclado.Size = new System.Drawing.Size(281, 31);
+            this.cmbTeclado.Size = new System.Drawing.Size(281, 26);
             this.cmbTeclado.TabIndex = 15;
             this.cmbTeclado.Text = "INFORME O PROBLEMA...";
             // 
@@ -333,7 +342,7 @@
             // 
             this.cmbMonitor.DropDownHeight = 200;
             this.cmbMonitor.Enabled = false;
-            this.cmbMonitor.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbMonitor.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbMonitor.ForeColor = System.Drawing.Color.Black;
             this.cmbMonitor.FormattingEnabled = true;
             this.cmbMonitor.IntegralHeight = false;
@@ -342,9 +351,9 @@
             "RISCO NA TELA",
             "MAL CONTATO",
             "EQUIPAMENTO DANIFICADO"});
-            this.cmbMonitor.Location = new System.Drawing.Point(746, 330);
+            this.cmbMonitor.Location = new System.Drawing.Point(746, 351);
             this.cmbMonitor.Name = "cmbMonitor";
-            this.cmbMonitor.Size = new System.Drawing.Size(281, 31);
+            this.cmbMonitor.Size = new System.Drawing.Size(281, 26);
             this.cmbMonitor.TabIndex = 16;
             this.cmbMonitor.Text = "INFORME O PROBLEMA...";
             // 
@@ -353,7 +362,7 @@
             this.bunifuSeparator4.BackColor = System.Drawing.Color.Transparent;
             this.bunifuSeparator4.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
             this.bunifuSeparator4.LineThickness = 1;
-            this.bunifuSeparator4.Location = new System.Drawing.Point(526, 51);
+            this.bunifuSeparator4.Location = new System.Drawing.Point(526, 72);
             this.bunifuSeparator4.Name = "bunifuSeparator4";
             this.bunifuSeparator4.Size = new System.Drawing.Size(30, 161);
             this.bunifuSeparator4.TabIndex = 17;
@@ -365,7 +374,7 @@
             this.bunifuSeparator5.BackColor = System.Drawing.Color.Transparent;
             this.bunifuSeparator5.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
             this.bunifuSeparator5.LineThickness = 1;
-            this.bunifuSeparator5.Location = new System.Drawing.Point(526, 224);
+            this.bunifuSeparator5.Location = new System.Drawing.Point(526, 245);
             this.bunifuSeparator5.Name = "bunifuSeparator5";
             this.bunifuSeparator5.Size = new System.Drawing.Size(30, 161);
             this.bunifuSeparator5.TabIndex = 18;
@@ -376,7 +385,7 @@
             // 
             this.lblMouse.AutoSize = true;
             this.lblMouse.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMouse.Location = new System.Drawing.Point(399, 288);
+            this.lblMouse.Location = new System.Drawing.Point(399, 309);
             this.lblMouse.Name = "lblMouse";
             this.lblMouse.Size = new System.Drawing.Size(31, 23);
             this.lblMouse.TabIndex = 19;
@@ -386,7 +395,7 @@
             // 
             this.lblTeclado.AutoSize = true;
             this.lblTeclado.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTeclado.Location = new System.Drawing.Point(966, 110);
+            this.lblTeclado.Location = new System.Drawing.Point(966, 116);
             this.lblTeclado.Name = "lblTeclado";
             this.lblTeclado.Size = new System.Drawing.Size(31, 23);
             this.lblTeclado.TabIndex = 20;
@@ -396,7 +405,7 @@
             // 
             this.lblMonitor.AutoSize = true;
             this.lblMonitor.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMonitor.Location = new System.Drawing.Point(966, 288);
+            this.lblMonitor.Location = new System.Drawing.Point(966, 294);
             this.lblMonitor.Name = "lblMonitor";
             this.lblMonitor.Size = new System.Drawing.Size(31, 23);
             this.lblMonitor.TabIndex = 21;
@@ -405,8 +414,8 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Verdana", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(180, 67);
+            this.label1.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(180, 88);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(120, 25);
             this.label1.TabIndex = 22;
@@ -415,8 +424,8 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Verdana", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(741, 67);
+            this.label2.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(741, 88);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(119, 25);
             this.label2.TabIndex = 23;
@@ -425,8 +434,8 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Verdana", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(180, 250);
+            this.label3.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(180, 271);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(96, 25);
             this.label3.TabIndex = 24;
@@ -435,8 +444,8 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Verdana", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(741, 250);
+            this.label4.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(741, 271);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(127, 25);
             this.label4.TabIndex = 25;
@@ -460,7 +469,7 @@
             this.btnEnviar.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(174)))), ((int)(((byte)(180)))));
             this.btnEnviar.IdleForecolor = System.Drawing.Color.White;
             this.btnEnviar.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(174)))), ((int)(((byte)(180)))));
-            this.btnEnviar.Location = new System.Drawing.Point(422, 397);
+            this.btnEnviar.Location = new System.Drawing.Point(426, 427);
             this.btnEnviar.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnEnviar.Name = "btnEnviar";
             this.btnEnviar.Size = new System.Drawing.Size(250, 50);
@@ -472,22 +481,91 @@
             // 
             this.pnlFooter.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlFooter.BackgroundImage")));
             this.pnlFooter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlFooter.Controls.Add(this.lblFooter);
             this.pnlFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlFooter.GradientBottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(47)))), ((int)(((byte)(63)))));
             this.pnlFooter.GradientBottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(47)))), ((int)(((byte)(63)))));
             this.pnlFooter.GradientTopLeft = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(47)))), ((int)(((byte)(63)))));
             this.pnlFooter.GradientTopRight = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(47)))), ((int)(((byte)(63)))));
-            this.pnlFooter.Location = new System.Drawing.Point(0, 450);
+            this.pnlFooter.Location = new System.Drawing.Point(0, 478);
             this.pnlFooter.Name = "pnlFooter";
             this.pnlFooter.Quality = 10;
-            this.pnlFooter.Size = new System.Drawing.Size(1110, 10);
+            this.pnlFooter.Size = new System.Drawing.Size(1110, 33);
             this.pnlFooter.TabIndex = 5;
+            // 
+            // lblFooter
+            // 
+            this.lblFooter.AutoSize = true;
+            this.lblFooter.BackColor = System.Drawing.Color.Transparent;
+            this.lblFooter.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFooter.ForeColor = System.Drawing.Color.White;
+            this.lblFooter.Location = new System.Drawing.Point(435, 7);
+            this.lblFooter.Name = "lblFooter";
+            this.lblFooter.Size = new System.Drawing.Size(241, 18);
+            this.lblFooter.TabIndex = 3;
+            this.lblFooter.Text = "Desenvolvido por Paulo Aquino.";
+            // 
+            // bunifuSeparator2
+            // 
+            this.bunifuSeparator2.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSeparator2.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
+            this.bunifuSeparator2.LineThickness = 1;
+            this.bunifuSeparator2.Location = new System.Drawing.Point(7, 47);
+            this.bunifuSeparator2.Name = "bunifuSeparator2";
+            this.bunifuSeparator2.Size = new System.Drawing.Size(1094, 35);
+            this.bunifuSeparator2.TabIndex = 27;
+            this.bunifuSeparator2.Transparency = 255;
+            this.bunifuSeparator2.Vertical = false;
+            // 
+            // pcbLogo
+            // 
+            this.pcbLogo.BackColor = System.Drawing.Color.Transparent;
+            this.pcbLogo.Image = global::CheckList.Properties.Resources.icone_winover;
+            this.pcbLogo.Location = new System.Drawing.Point(12, 7);
+            this.pcbLogo.Name = "pcbLogo";
+            this.pcbLogo.Size = new System.Drawing.Size(33, 17);
+            this.pcbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pcbLogo.TabIndex = 28;
+            this.pcbLogo.TabStop = false;
+            // 
+            // lblUsuario
+            // 
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuario.Location = new System.Drawing.Point(181, 34);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(68, 23);
+            this.lblUsuario.TabIndex = 28;
+            this.lblUsuario.Text = "label6";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(505, 34);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(68, 23);
+            this.label6.TabIndex = 29;
+            this.label6.Text = "label6";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(863, 34);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(68, 23);
+            this.label7.TabIndex = 30;
+            this.label7.Text = "label7";
             // 
             // ChkList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1110, 460);
+            this.ClientSize = new System.Drawing.Size(1110, 511);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.btnEnviar);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -515,6 +593,7 @@
             this.Controls.Add(this.bunifuSeparator1);
             this.Controls.Add(this.bunifuSeparator3);
             this.Controls.Add(this.bunifuSeparator4);
+            this.Controls.Add(this.bunifuSeparator2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ChkList";
@@ -527,6 +606,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnMonitor)).EndInit();
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();
+            this.pnlFooter.ResumeLayout(false);
+            this.pnlFooter.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -569,5 +651,11 @@
         private System.Windows.Forms.Label label4;
         private Bunifu.Framework.UI.BunifuThinButton2 btnEnviar;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblFooter;
+        private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator2;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblUsuario;
+        private System.Windows.Forms.PictureBox pcbLogo;
     }
 }

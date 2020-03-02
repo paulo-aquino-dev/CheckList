@@ -184,6 +184,7 @@
             this.txtLogin.TabIndex = 2;
             this.txtLogin.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.ttpBtn.SetToolTip(this.txtLogin, "USUARIO LOGIN/LOGOUT");
+            this.txtLogin.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtLogin_KeyDown);
             // 
             // pnlLeft
             // 

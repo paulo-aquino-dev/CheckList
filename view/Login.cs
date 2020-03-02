@@ -72,5 +72,10 @@ namespace CheckList.view
             Message.Icone = "OK";
             formMsg.ShowDialog();
         }
+
+        private void TxtLogin_KeyDown(object sender, KeyEventArgs e)
+        {
+          
+        }
     }
 }
