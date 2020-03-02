@@ -143,18 +143,20 @@
   <data name="pnlFooter.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAXSURBVChTY1DWt/9PDB5ViBdTW6H9fwCkFpxBvP+cUAAA
-        AABJRU5ErkJggg==
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABBSURBVChTjcMBCoAgEETRQSvZEFmQgsD7X/PXDZoHTx+s
+        pVScqtuBU3sLnGrRcSp64tQ5Jk71vHFqzAen8lr8X7yI73Ax/0XVuQAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="pnlTop.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABPSURBVChTjcMhD0BQAIXRO2bGzPz/pr1NEiRFkARJ0Ew0
-        kfw+P8E925FixJo8L06l141T2XHiVL7tOFUsK06V04xT1TDiVN31ONW0gf+BD8+7CgBzIRWdAAAAAElF
-        TkSuQmCC
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABBSURBVChTjcMBCoAgEETRQSvZEFmQgsD7X/PXDZoHTx+s
+        pVScqtuBU3sLnGrRcSp64tQ5Jk71vHFqzAen8lr8X7yI73Ax/0XVuQAAAABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="ttpBtn.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 56</value>
+  </metadata>
   <data name="btnMonitor.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
@@ -197,9 +199,6 @@
         AAAASUVORK5CYII=
 </value>
   </data>
-  <metadata name="ttpBtn.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 56</value>
-  </metadata>
   <data name="btnTeclado.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
@@ -961,5 +960,8 @@
   </metadata>
   <metadata name="bdcTop.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>685, 17</value>
+  </metadata>
+  <metadata name="ttpBtn.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 56</value>
   </metadata>
 </root>

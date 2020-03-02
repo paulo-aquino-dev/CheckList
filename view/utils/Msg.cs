@@ -47,5 +47,7 @@ namespace CheckList.view.utils
         {
             this.Close();
         }
+
+     
     }
 }

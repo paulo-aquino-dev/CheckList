@@ -33,11 +33,13 @@
             this.elipseForm = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.lblMsg = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblTitulo = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.pnlTop = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.pcbMsg = new System.Windows.Forms.PictureBox();
             this.fadeMsg = new Bunifu.Framework.UI.BunifuFormFadeTransition(this.components);
             this.btnOk = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.pnlTop = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.lblTop = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pcbMsg)).BeginInit();
+            this.pnlTop.SuspendLayout();
             this.SuspendLayout();
             // 
             // elipseForm
@@ -64,21 +66,6 @@
             this.lblTitulo.Size = new System.Drawing.Size(71, 25);
             this.lblTitulo.TabIndex = 4;
             this.lblTitulo.Text = "Titulo";
-            // 
-            // pnlTop
-            // 
-            this.pnlTop.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlTop.BackgroundImage")));
-            this.pnlTop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTop.GradientBottomLeft = System.Drawing.Color.Black;
-            this.pnlTop.GradientBottomRight = System.Drawing.Color.Black;
-            this.pnlTop.GradientTopLeft = System.Drawing.Color.Black;
-            this.pnlTop.GradientTopRight = System.Drawing.Color.Black;
-            this.pnlTop.Location = new System.Drawing.Point(0, 0);
-            this.pnlTop.Name = "pnlTop";
-            this.pnlTop.Quality = 10;
-            this.pnlTop.Size = new System.Drawing.Size(541, 30);
-            this.pnlTop.TabIndex = 6;
             // 
             // pcbMsg
             // 
@@ -131,13 +118,41 @@
             this.btnOk.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOk.Click += new System.EventHandler(this.BtnOk_Click);
             // 
+            // pnlTop
+            // 
+            this.pnlTop.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlTop.BackgroundImage")));
+            this.pnlTop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlTop.Controls.Add(this.lblTop);
+            this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTop.GradientBottomLeft = System.Drawing.Color.Black;
+            this.pnlTop.GradientBottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(47)))), ((int)(((byte)(63)))));
+            this.pnlTop.GradientTopLeft = System.Drawing.Color.Black;
+            this.pnlTop.GradientTopRight = System.Drawing.Color.Black;
+            this.pnlTop.Location = new System.Drawing.Point(0, 0);
+            this.pnlTop.Name = "pnlTop";
+            this.pnlTop.Quality = 10;
+            this.pnlTop.Size = new System.Drawing.Size(541, 28);
+            this.pnlTop.TabIndex = 8;
+            // 
+            // lblTop
+            // 
+            this.lblTop.AutoSize = true;
+            this.lblTop.BackColor = System.Drawing.Color.Transparent;
+            this.lblTop.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTop.ForeColor = System.Drawing.Color.White;
+            this.lblTop.Location = new System.Drawing.Point(177, 5);
+            this.lblTop.Name = "lblTop";
+            this.lblTop.Size = new System.Drawing.Size(185, 18);
+            this.lblTop.TabIndex = 3;
+            this.lblTop.Text = "MENSAGEM SISTEMICA";
+            // 
             // Msg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(541, 212);
-            this.Controls.Add(this.btnOk);
             this.Controls.Add(this.pnlTop);
+            this.Controls.Add(this.btnOk);
             this.Controls.Add(this.lblMsg);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.pcbMsg);
@@ -149,6 +164,8 @@
             this.Load += new System.EventHandler(this.Msg_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Msg_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pcbMsg)).EndInit();
+            this.pnlTop.ResumeLayout(false);
+            this.pnlTop.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -160,8 +177,9 @@
         private System.Windows.Forms.PictureBox pcbMsg;
         private Bunifu.Framework.UI.BunifuCustomLabel lblMsg;
         private Bunifu.Framework.UI.BunifuCustomLabel lblTitulo;
-        private Bunifu.Framework.UI.BunifuGradientPanel pnlTop;
         private Bunifu.Framework.UI.BunifuFormFadeTransition fadeMsg;
         private Bunifu.Framework.UI.BunifuFlatButton btnOk;
+        private Bunifu.Framework.UI.BunifuGradientPanel pnlTop;
+        private System.Windows.Forms.Label lblTop;
     }
 }
