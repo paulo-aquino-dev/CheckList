@@ -73,14 +73,14 @@
             this.pnlTop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlTop.Controls.Add(this.btnSair);
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTop.GradientBottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(254)))), ((int)(((byte)(254)))));
-            this.pnlTop.GradientBottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(47)))), ((int)(((byte)(63)))));
-            this.pnlTop.GradientTopLeft = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(254)))), ((int)(((byte)(254)))));
-            this.pnlTop.GradientTopRight = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(254)))), ((int)(((byte)(254)))));
+            this.pnlTop.GradientBottomLeft = System.Drawing.Color.Black;
+            this.pnlTop.GradientBottomRight = System.Drawing.Color.Black;
+            this.pnlTop.GradientTopLeft = System.Drawing.Color.Black;
+            this.pnlTop.GradientTopRight = System.Drawing.Color.Black;
             this.pnlTop.Location = new System.Drawing.Point(0, 0);
             this.pnlTop.Name = "pnlTop";
             this.pnlTop.Quality = 10;
-            this.pnlTop.Size = new System.Drawing.Size(531, 30);
+            this.pnlTop.Size = new System.Drawing.Size(677, 30);
             this.pnlTop.TabIndex = 6;
             // 
             // btnSair
@@ -88,7 +88,7 @@
             this.btnSair.BackColor = System.Drawing.Color.Transparent;
             this.btnSair.Image = global::CheckList.Properties.Resources.icone_X;
             this.btnSair.ImageActive = null;
-            this.btnSair.Location = new System.Drawing.Point(491, 0);
+            this.btnSair.Location = new System.Drawing.Point(637, 0);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(28, 28);
             this.btnSair.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -115,7 +115,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(531, 160);
+            this.ClientSize = new System.Drawing.Size(677, 160);
             this.Controls.Add(this.pnlTop);
             this.Controls.Add(this.lblMsg);
             this.Controls.Add(this.lblTitulo);

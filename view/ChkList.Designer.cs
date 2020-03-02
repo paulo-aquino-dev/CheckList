@@ -283,7 +283,7 @@
             this.cmbHead.Items.AddRange(new object[] {
             "MAL CONTATO",
             "NÃO FUNCIONA",
-            "HASTE QUEBRADA"});
+            "EQUIPAMENTO DANIFICADO"});
             this.cmbHead.Location = new System.Drawing.Point(185, 154);
             this.cmbHead.Name = "cmbHead";
             this.cmbHead.Size = new System.Drawing.Size(281, 31);
@@ -299,8 +299,11 @@
             this.cmbMouse.FormattingEnabled = true;
             this.cmbMouse.IntegralHeight = false;
             this.cmbMouse.Items.AddRange(new object[] {
-            "ITEM 01",
-            "ITEM 02"});
+            "DUPLO CLIQUE",
+            "SCROLL NÃO FUNCIONA",
+            "BOTÃO NÃO FUNCIONA",
+            "MOVIMENTAÇÃO RUIM (SETA)",
+            "EQUIPAMENTO DANIFICADO"});
             this.cmbMouse.Location = new System.Drawing.Point(185, 330);
             this.cmbMouse.Name = "cmbMouse";
             this.cmbMouse.Size = new System.Drawing.Size(281, 31);
@@ -316,8 +319,10 @@
             this.cmbTeclado.FormattingEnabled = true;
             this.cmbTeclado.IntegralHeight = false;
             this.cmbTeclado.Items.AddRange(new object[] {
-            "ITEM 01",
-            "ITEM 02"});
+            "TECLA AFUNDADA",
+            "MAL CONTATO",
+            "TECLADO APAGADO",
+            "EQUIPAMENTO DANIFICADO"});
             this.cmbTeclado.Location = new System.Drawing.Point(746, 154);
             this.cmbTeclado.Name = "cmbTeclado";
             this.cmbTeclado.Size = new System.Drawing.Size(281, 31);
@@ -333,8 +338,10 @@
             this.cmbMonitor.FormattingEnabled = true;
             this.cmbMonitor.IntegralHeight = false;
             this.cmbMonitor.Items.AddRange(new object[] {
-            "ITEM 01",
-            "ITEM 02"});
+            "IMAGEM EMBAÇADA",
+            "RISCO NA TELA",
+            "MAL CONTATO",
+            "EQUIPAMENTO DANIFICADO"});
             this.cmbMonitor.Location = new System.Drawing.Point(746, 330);
             this.cmbMonitor.Name = "cmbMonitor";
             this.cmbMonitor.Size = new System.Drawing.Size(281, 31);
