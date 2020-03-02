@@ -80,7 +80,7 @@
             this.pnlTop.Location = new System.Drawing.Point(0, 0);
             this.pnlTop.Name = "pnlTop";
             this.pnlTop.Quality = 10;
-            this.pnlTop.Size = new System.Drawing.Size(490, 30);
+            this.pnlTop.Size = new System.Drawing.Size(531, 30);
             this.pnlTop.TabIndex = 6;
             // 
             // btnSair
@@ -88,7 +88,7 @@
             this.btnSair.BackColor = System.Drawing.Color.Transparent;
             this.btnSair.Image = global::CheckList.Properties.Resources.icone_X;
             this.btnSair.ImageActive = null;
-            this.btnSair.Location = new System.Drawing.Point(450, 0);
+            this.btnSair.Location = new System.Drawing.Point(491, 0);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(28, 28);
             this.btnSair.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -115,7 +115,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(490, 156);
+            this.ClientSize = new System.Drawing.Size(531, 160);
             this.Controls.Add(this.pnlTop);
             this.Controls.Add(this.lblMsg);
             this.Controls.Add(this.lblTitulo);
