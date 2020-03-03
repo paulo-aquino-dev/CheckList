@@ -103,7 +103,7 @@
             this.btnOk.IconVisible = true;
             this.btnOk.IconZoom = 90D;
             this.btnOk.IsTab = false;
-            this.btnOk.Location = new System.Drawing.Point(156, 146);
+            this.btnOk.Location = new System.Drawing.Point(154, 146);
             this.btnOk.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnOk.Name = "btnOk";
             this.btnOk.Normalcolor = System.Drawing.Color.Green;

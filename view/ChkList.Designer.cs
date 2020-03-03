@@ -41,6 +41,7 @@
             this.btnMonitor = new Bunifu.Framework.UI.BunifuImageButton();
             this.bdcTop = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.pnlTop = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.pcbLogo = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.bunifuSeparator3 = new Bunifu.Framework.UI.BunifuSeparator();
@@ -67,17 +68,15 @@
             this.pnlFooter = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.lblFooter = new System.Windows.Forms.Label();
             this.bunifuSeparator2 = new Bunifu.Framework.UI.BunifuSeparator();
-            this.pcbLogo = new System.Windows.Forms.PictureBox();
             this.lblUsuario = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblPa = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.btnHead)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMouse)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnTeclado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMonitor)).BeginInit();
             this.pnlTop.SuspendLayout();
-            this.pnlFooter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).BeginInit();
+            this.pnlFooter.SuspendLayout();
             this.SuspendLayout();
             // 
             // elipseForm
@@ -190,6 +189,17 @@
             this.pnlTop.Size = new System.Drawing.Size(1110, 28);
             this.pnlTop.TabIndex = 4;
             // 
+            // pcbLogo
+            // 
+            this.pcbLogo.BackColor = System.Drawing.Color.Transparent;
+            this.pcbLogo.Image = global::CheckList.Properties.Resources.icone_winover;
+            this.pcbLogo.Location = new System.Drawing.Point(12, 7);
+            this.pcbLogo.Name = "pcbLogo";
+            this.pcbLogo.Size = new System.Drawing.Size(33, 17);
+            this.pcbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pcbLogo.TabIndex = 28;
+            this.pcbLogo.TabStop = false;
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -225,6 +235,7 @@
             this.bunifuSeparator3.TabIndex = 7;
             this.bunifuSeparator3.Transparency = 255;
             this.bunifuSeparator3.Vertical = false;
+
             // 
             // lblStatusHead
             // 
@@ -517,54 +528,32 @@
             this.bunifuSeparator2.Transparency = 255;
             this.bunifuSeparator2.Vertical = false;
             // 
-            // pcbLogo
-            // 
-            this.pcbLogo.BackColor = System.Drawing.Color.Transparent;
-            this.pcbLogo.Image = global::CheckList.Properties.Resources.icone_winover;
-            this.pcbLogo.Location = new System.Drawing.Point(12, 7);
-            this.pcbLogo.Name = "pcbLogo";
-            this.pcbLogo.Size = new System.Drawing.Size(33, 17);
-            this.pcbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pcbLogo.TabIndex = 28;
-            this.pcbLogo.TabStop = false;
-            // 
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.Location = new System.Drawing.Point(181, 34);
+            this.lblUsuario.Location = new System.Drawing.Point(19, 35);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(68, 23);
             this.lblUsuario.TabIndex = 28;
             this.lblUsuario.Text = "label6";
             // 
-            // label6
+            // lblPa
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(505, 34);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(68, 23);
-            this.label6.TabIndex = 29;
-            this.label6.Text = "label6";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(863, 34);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(68, 23);
-            this.label7.TabIndex = 30;
-            this.label7.Text = "label7";
+            this.lblPa.AutoSize = true;
+            this.lblPa.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPa.Location = new System.Drawing.Point(578, 35);
+            this.lblPa.Name = "lblPa";
+            this.lblPa.Size = new System.Drawing.Size(68, 23);
+            this.lblPa.TabIndex = 29;
+            this.lblPa.Text = "label6";
             // 
             // ChkList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1110, 511);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.lblPa);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.btnEnviar);
             this.Controls.Add(this.label4);
@@ -606,9 +595,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnMonitor)).EndInit();
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).EndInit();
             this.pnlFooter.ResumeLayout(false);
             this.pnlFooter.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -653,8 +642,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblFooter;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator2;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblPa;
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.PictureBox pcbLogo;
     }

@@ -1,16 +1,12 @@
-﻿using Bunifu.Framework.UI;
+﻿using CheckList.config;
 using CheckList.control;
 using CheckList.view.utils;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
-using System.Linq;
 using System.Management;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Message = CheckList.view.utils.Message;
 
@@ -34,6 +30,11 @@ namespace CheckList.view
         private const int APPCOMMAND_VOLUME_DOWN = 9 * 65536;
         private const int APPCOMMAND_VOLUME_UP = 10 * 65536;
 
+        string headDesc = "OK";
+        string monitorDesc = "OK";
+        string mouseDesc = "OK";
+        string tecladoDesc = "OK";
+
         [DllImport("user32.dll")]
         public static extern IntPtr SendMessageW(IntPtr hWnd, int Msg,
             IntPtr wParam, IntPtr lParam);
@@ -52,9 +53,24 @@ namespace CheckList.view
 
         private void ChkList_Load(object sender, EventArgs e)
         {
-            Console.WriteLine(dadosUsuario.Nome);
-            Console.WriteLine(dadosUsuario.Matricula);
-            Console.WriteLine(dadosUsuario.PA);
+            try
+            {
+                //CONEXAO BD GLPI
+                ConexaoChecklist.objCnx.ConnectionString = ConexaoChecklist.conexao;
+                //ABRE A CONEXAO COM O BANCO
+                ConexaoChecklist.objCnx.Open();
+            }
+            catch (Exception Erro)
+            {
+                Msg formMsg2 = new Msg();
+                Message.Msg = "ERRO: " + Erro.Message;
+                Message.Icone = "ERRO";
+                formMsg2.ShowDialog();
+            }
+
+            //lblUsuario.Text = dadosUsuario.Nome;
+            lblUsuario.Text = "USUARIO: " + DadosUsuario.Nome;
+            lblPa.Text = DadosUsuario.PA;
 
             System.Diagnostics.Process.Start("SndVol.exe");
 
@@ -89,9 +105,8 @@ namespace CheckList.view
 
         string headStatus = "";
         string mouseStatus = "";
-        string tecladoStatus= "";
+        string tecladoStatus = "";
         string monitorStatus = "";
-      
 
         private void BtnHead_Click(object sender, EventArgs e)
         {
@@ -167,7 +182,7 @@ namespace CheckList.view
                 lbl.Text = "DANIFICADO";
                 cmb.Enabled = true;
                 lbl.ForeColor = Color.Red;
-                monitorStatus = "DANIFICADO";
+                mouseStatus = "DANIFICADO";
             }
             else
             {
@@ -220,12 +235,53 @@ namespace CheckList.view
             }
             else
             {
+                if (ConexaoChecklist.objCnx.State.Equals(ConnectionState.Open))
+                {
+                    if (headStatus.Equals("DANIFICADO"))
+                    {
+                        headDesc = cmbHead.SelectedItem.ToString();
+                    }
+                    if (monitorStatus.Equals("DANIFICADO"))
+                    {
+                        monitorDesc = cmbMonitor.SelectedItem.ToString();
+                    }
+                    if (mouseStatus.Equals("DANIFICADO"))
+                    {
+                        mouseDesc = cmbMouse.SelectedItem.ToString();
+                    }
+                    if (tecladoStatus.Equals("DANIFICADO"))
+                    {
+                        tecladoDesc = cmbTeclado.SelectedItem.ToString();
+                    }
+                    try
+                    {
+                        string strSql = "INSERT INTO db_checklist.tb_checklist (chk_id, chk_usuario, chk_hostname ,chk_data, chk_head_status, chk_monitor_status, chk_mouse_status, chk_teclado_status, chk_head_desc, chk_monitor_desc, chk_mouse_desc, chk_teclado_desc)"
+                                      + "VALUES (NULL,'" + DadosUsuario.Login + "','" + DadosUsuario.PA + "',NOW(),'" + headStatus + "','" + monitorStatus + "','" + mouseStatus + "','" + tecladoStatus + "', '" + headDesc + "','" + monitorDesc + "','" + mouseDesc + "','" + tecladoDesc + "');";
+
+                        //conexão com o comando
+                        ConexaoChecklist.objCmd.Connection = ConexaoChecklist.objCnx;
+                        //Atribui o comando
+                        ConexaoChecklist.objCmd.CommandText = strSql;
+
+                        ConexaoChecklist.objCmd.ExecuteNonQuery();
+                    }
+                    catch (Exception Erro)
+                    {
+                        Msg formMsgErro = new Msg();
+                        Console.WriteLine(Erro.Message);
+                        Message.Msg = "ERRO: " + Erro.Message;
+                        Message.Icone = "ERRO";
+                        formMsgErro.ShowDialog();
+                    }
+
+                }
                 Msg formMsg = new Msg();
                 Message.Msg = "CHECKLIST ENVIADO!!!";
                 Message.Icone = "OK";
                 formMsg.ShowDialog();
                 System.Diagnostics.Process.Start("http://172.21.0.230/eaglle");
                 System.Diagnostics.Process.Start("C:\\Olos\\SoftphoneOlos.exe");
+                Process.Start("taskkill", "/F /IM SndVol.exe");
                 Application.Exit();
             }
         }

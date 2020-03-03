@@ -14,11 +14,12 @@ namespace CheckList.view
         {
             InitializeComponent();
         }
-        int i = 0;
-        string nome = "";
-        string PA = "";
-        string  matricula = "";
-        string logon = "";
+
+        private int i = 0;
+        private string nome = "";
+        private string PA = "";
+        private string matricula = "";
+        private string login = "";
 
         private void LoginPrincipal_Load(object sender, EventArgs e)
         {
@@ -69,7 +70,7 @@ namespace CheckList.view
                         //ABRE A CONEXAO COM O BANCO
                         config.Usuarios.objCnx.Open();
 
-                        strSql = "select distinct nome, matricula from funcionarios where matricula = " + matricula + ";";
+                        strSql = "select distinct nome, login from funcionarios where matricula = " + matricula + ";";
 
                         //conexão com o comando
                         config.Usuarios.objCmd.Connection = config.Usuarios.objCnx;
@@ -81,7 +82,8 @@ namespace CheckList.view
                         config.Usuarios.objFunc.Read();
 
                         nome = config.Usuarios.objFunc[0].ToString();
-                        Console.WriteLine(nome);
+                        login = config.Usuarios.objFunc[1].ToString();
+                        
                     }
                     catch (Exception Erro)
                     {
@@ -93,12 +95,10 @@ namespace CheckList.view
                     if (hostname.Contains("WOCCOP"))
                     {
                         PA = "PA" + hostname.Substring(6);
-                        Console.WriteLine(PA);
                     }
                     else if (hostname.Contains("WOCCDTI"))
                     {
                         PA = "MAQUINA TI " + hostname.Substring(7);
-                        Console.WriteLine(PA);
                     }
                 }
                 else
@@ -143,6 +143,9 @@ namespace CheckList.view
                 }
                 else if (i > 99)
                 {
+                    DadosUsuario.Nome = nome;
+                    DadosUsuario.PA = PA;
+                    DadosUsuario.Login = login;
                     Msg formMsg = new Msg();
                     Message.Msg = "Bem Vindo: " + nome;
                     Message.Icone = "OK";
@@ -150,14 +153,8 @@ namespace CheckList.view
                     ChkList formCheck = new ChkList();
                     this.Visible = false;
                     formCheck.ShowDialog();
-
-                    dadosUsuario.Nome = nome;
-                    dadosUsuario.PA = PA;
-                    dadosUsuario.Matricula = matricula;
                 }
             }
         }
-
-
     }
 }

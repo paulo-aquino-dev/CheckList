@@ -70,13 +70,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="config\conexao.cs" />
-    <Compile Include="control\dadosUsuario.cs" />
+    <Compile Include="config\Conexao.cs" />
+    <Compile Include="config\ConexaoChecklist.cs" />
+    <Compile Include="config\ConexaoGLPI.cs" />
+    <Compile Include="control\DadosUsuario.cs" />
     <Compile Include="control\loginControl.cs" />
     <Compile Include="control\Usuarios.cs" />
     <Compile Include="model\Login.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="view\apiGLPI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\apiGLPI.Designer.cs">
+      <DependentUpon>apiGLPI.cs</DependentUpon>
+    </Compile>
     <Compile Include="view\Audio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +131,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="view\apiGLPI.resx">
+      <DependentUpon>apiGLPI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="view\Audio.resx">
       <DependentUpon>Audio.cs</DependentUpon>
     </EmbeddedResource>
