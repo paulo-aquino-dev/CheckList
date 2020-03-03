@@ -71,6 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="config\conexao.cs" />
+    <Compile Include="control\dadosUsuario.cs" />
     <Compile Include="control\loginControl.cs" />
     <Compile Include="control\Usuarios.cs" />
     <Compile Include="model\Login.cs" />
@@ -99,12 +100,6 @@
     </Compile>
     <Compile Include="view\LoginPrincipal.Designer.cs">
       <DependentUpon>LoginPrincipal.cs</DependentUpon>
-    </Compile>
-    <Compile Include="view\teste.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="view\teste.Designer.cs">
-      <DependentUpon>teste.cs</DependentUpon>
     </Compile>
     <Compile Include="view\utils\Message.cs" />
     <Compile Include="view\utils\Msg.cs">
@@ -139,9 +134,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="view\LoginPrincipal.resx">
       <DependentUpon>LoginPrincipal.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="view\teste.resx">
-      <DependentUpon>teste.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\utils\Msg.resx">
       <DependentUpon>Msg.cs</DependentUpon>

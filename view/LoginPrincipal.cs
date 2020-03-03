@@ -1,4 +1,5 @@
-﻿using CheckList.view.utils;
+﻿using CheckList.control;
+using CheckList.view.utils;
 using System;
 using System.Data;
 using System.Net;
@@ -16,14 +17,15 @@ namespace CheckList.view
         int i = 0;
         string nome = "";
         string PA = "";
+        string  matricula = "";
+        string logon = "";
+
         private void LoginPrincipal_Load(object sender, EventArgs e)
         {
             string data = DateTime.Now.ToString("yyyy-MM-dd");
 
             //PEGA O HOSTNAME
             string hostMaquina = Dns.GetHostName();
-
-            string matricula = "";
 
             timerPgb.Start();
             try
@@ -59,8 +61,6 @@ namespace CheckList.view
                     matricula = config.Usuarios.objFunc[1].ToString();
                     var teste = hostname.Split(' ');
                     hostname = teste[0];
-                    Console.WriteLine(hostname + " " + matricula);
-                    Console.WriteLine(data);
                     config.Usuarios.objCnx.Close();
                     try
                     {
@@ -150,6 +150,10 @@ namespace CheckList.view
                     ChkList formCheck = new ChkList();
                     this.Visible = false;
                     formCheck.ShowDialog();
+
+                    dadosUsuario.Nome = nome;
+                    dadosUsuario.PA = PA;
+                    dadosUsuario.Matricula = matricula;
                 }
             }
         }

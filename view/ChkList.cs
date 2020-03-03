@@ -1,4 +1,5 @@
 ﻿using Bunifu.Framework.UI;
+using CheckList.control;
 using CheckList.view.utils;
 using System;
 using System.Collections.Generic;
@@ -47,18 +48,23 @@ namespace CheckList.view
                 SendMessageW(this.Handle, WM_APPCOMMAND, this.Handle,
                 (IntPtr)APPCOMMAND_MICROPHONE_VOLUME_UP);
             }
-            
         }
 
         private void ChkList_Load(object sender, EventArgs e)
         {
+            Console.WriteLine(dadosUsuario.Nome);
+            Console.WriteLine(dadosUsuario.Matricula);
+            Console.WriteLine(dadosUsuario.PA);
+
+            System.Diagnostics.Process.Start("SndVol.exe");
+
             ManagementObjectSearcher mos = new ManagementObjectSearcher("select * from Win32_SoundDevice");
             String head = "";
             foreach (ManagementObject soundDevice in mos.Get())
             {
                 String sDeviceName = soundDevice.GetPropertyValue("Name").ToString();
 
-                Console.WriteLine("Device Name = {0}", sDeviceName);
+                //Console.WriteLine("Device Name = {0}", sDeviceName);
                 if (sDeviceName.Equals("Dispositivo de áudio USB"))
                 {
                     head = sDeviceName;
@@ -85,7 +91,7 @@ namespace CheckList.view
         string mouseStatus = "";
         string tecladoStatus= "";
         string monitorStatus = "";
-       
+      
 
         private void BtnHead_Click(object sender, EventArgs e)
         {
@@ -218,10 +224,10 @@ namespace CheckList.view
                 Message.Msg = "CHECKLIST ENVIADO!!!";
                 Message.Icone = "OK";
                 formMsg.ShowDialog();
+                System.Diagnostics.Process.Start("http://172.21.0.230/eaglle");
+                System.Diagnostics.Process.Start("C:\\Olos\\SoftphoneOlos.exe");
                 Application.Exit();
             }
         }
-
-
     }
 }
