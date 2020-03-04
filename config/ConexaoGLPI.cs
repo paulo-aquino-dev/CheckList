@@ -15,6 +15,6 @@ namespace CheckList.config
 
         public static MySqlDataReader objFunc;
 
-        public static string conexao = "Server=172.21.0.25;Database=db_facilities;User=ti;Pwd=123;";
+        public static string conexao = "Server=172.21.0.11;Database=db_ti;User=DBA;Pwd=123;";
     }
 }

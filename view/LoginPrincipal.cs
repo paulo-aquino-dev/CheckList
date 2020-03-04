@@ -18,6 +18,7 @@ namespace CheckList.view
         private int i = 0;
         private string nome = "";
         private string PA = "";
+        private string localizacao = "";
         private string matricula = "";
         private string login = "";
 
@@ -83,7 +84,7 @@ namespace CheckList.view
 
                         nome = config.Usuarios.objFunc[0].ToString();
                         login = config.Usuarios.objFunc[1].ToString();
-                        
+                        config.Usuarios.objCnx.Close();
                     }
                     catch (Exception Erro)
                     {
@@ -95,10 +96,37 @@ namespace CheckList.view
                     if (hostname.Contains("WOCCOP"))
                     {
                         PA = "PA" + hostname.Substring(6);
+                        if (hostname.Contains("WOCCOP000"))
+                        {
+                            localizacao = hostname.Substring(9);
+                        }
+                        else if (hostname.Contains("WOCCOP00"))
+                        {
+                            localizacao = hostname.Substring(8);
+                        }
+                        else if (hostname.Contains("WOCCOP0"))
+                        {
+                            localizacao = hostname.Substring(7);
+                        }
+                        Console.WriteLine(localizacao);
                     }
                     else if (hostname.Contains("WOCCDTI"))
                     {
-                        PA = "MAQUINA TI " + hostname.Substring(7);
+                        PA = "WOCCOP0120";
+                        if (PA.Contains("WOCCOP000"))
+                        {
+                            localizacao = PA.Substring(9);
+                        }
+                        else if (PA.Contains("WOCCOP00"))
+                        {
+                            localizacao = PA.Substring(8);
+                        }
+                        else if (PA.Contains("WOCCOP0"))
+                        {
+                            localizacao = PA.Substring(7);
+                        }
+                        Console.WriteLine(localizacao);
+                        //PA = "MAQUINA TI " + hostname.Substring(7);
                     }
                 }
                 else
@@ -108,6 +136,10 @@ namespace CheckList.view
                     Message.Icone = "ERRO";
                     formMsg2.ShowDialog();
                 }
+            }
+            else
+            {
+
             }
         }
 
@@ -146,6 +178,7 @@ namespace CheckList.view
                     DadosUsuario.Nome = nome;
                     DadosUsuario.PA = PA;
                     DadosUsuario.Login = login;
+                    DadosUsuario.Localizacao = localizacao;
                     Msg formMsg = new Msg();
                     Message.Msg = "Bem Vindo: " + nome;
                     Message.Icone = "OK";

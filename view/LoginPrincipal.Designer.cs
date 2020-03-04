@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginPrincipal));
-            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.bnfElipse = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.pgbLogin = new ns1.BunifuCircleProgressbar();
             this.lblVerificacao = new System.Windows.Forms.Label();
             this.timerPgb = new System.Windows.Forms.Timer(this.components);
@@ -44,10 +44,10 @@
             this.pnlFooter.SuspendLayout();
             this.SuspendLayout();
             // 
-            // bunifuElipse1
+            // bnfElipse
             // 
-            this.bunifuElipse1.ElipseRadius = 5;
-            this.bunifuElipse1.TargetControl = this;
+            this.bnfElipse.ElipseRadius = 15;
+            this.bnfElipse.TargetControl = this;
             // 
             // pgbLogin
             // 
@@ -180,7 +180,7 @@
 
         #endregion
 
-        private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
+        private Bunifu.Framework.UI.BunifuElipse bnfElipse;
         private System.Windows.Forms.Label lblVerificacao;
         private ns1.BunifuCircleProgressbar pgbLogin;
         private System.Windows.Forms.Timer timerPgb;

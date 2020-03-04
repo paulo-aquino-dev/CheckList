@@ -80,7 +80,6 @@ namespace CheckList.view
             {
                 String sDeviceName = soundDevice.GetPropertyValue("Name").ToString();
 
-                //Console.WriteLine("Device Name = {0}", sDeviceName);
                 if (sDeviceName.Equals("Dispositivo de áudio USB"))
                 {
                     head = sDeviceName;
@@ -262,7 +261,6 @@ namespace CheckList.view
                         ConexaoChecklist.objCmd.Connection = ConexaoChecklist.objCnx;
                         //Atribui o comando
                         ConexaoChecklist.objCmd.CommandText = strSql;
-
                         ConexaoChecklist.objCmd.ExecuteNonQuery();
                     }
                     catch (Exception Erro)
@@ -273,7 +271,6 @@ namespace CheckList.view
                         Message.Icone = "ERRO";
                         formMsgErro.ShowDialog();
                     }
-
                 }
                 Msg formMsg = new Msg();
                 Message.Msg = "CHECKLIST ENVIADO!!!";

@@ -74,9 +74,6 @@
     <Compile Include="config\ConexaoChecklist.cs" />
     <Compile Include="config\ConexaoGLPI.cs" />
     <Compile Include="control\DadosUsuario.cs" />
-    <Compile Include="control\loginControl.cs" />
-    <Compile Include="control\Usuarios.cs" />
-    <Compile Include="model\Login.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="view\apiGLPI.cs">
@@ -186,6 +183,8 @@
     <None Include="view\img\icone-unhide.png" />
     <None Include="view\img\icone-user.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="model\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

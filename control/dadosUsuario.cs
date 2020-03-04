@@ -11,6 +11,7 @@ namespace CheckList.control
         private static string nome;
         private static string login;
         private static string pa;
+        private static string localizacao;
 
         public static string Nome
         {
@@ -26,6 +27,11 @@ namespace CheckList.control
         {
             get { return pa; }
             set { pa = value; }
+        }
+        public static string Localizacao
+        {
+            get { return localizacao; }
+            set { localizacao = value; }
         }
     }
 }
