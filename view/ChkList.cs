@@ -34,6 +34,7 @@ namespace CheckList.view
         string monitorDesc = "OK";
         string mouseDesc = "OK";
         string tecladoDesc = "OK";
+        string dadosChamado = null;
 
         [DllImport("user32.dll")]
         public static extern IntPtr SendMessageW(IntPtr hWnd, int Msg,
@@ -55,7 +56,7 @@ namespace CheckList.view
         {
             try
             {
-                //CONEXAO BD GLPI
+                //CONEXAO BD checklist
                 ConexaoChecklist.objCnx.ConnectionString = ConexaoChecklist.conexao;
                 //ABRE A CONEXAO COM O BANCO
                 ConexaoChecklist.objCnx.Open();
@@ -239,18 +240,22 @@ namespace CheckList.view
                     if (headStatus.Equals("DANIFICADO"))
                     {
                         headDesc = cmbHead.SelectedItem.ToString();
+                        dadosChamado += " HEADSET: " + cmbHead.SelectedItem.ToString(); ;
                     }
                     if (monitorStatus.Equals("DANIFICADO"))
                     {
                         monitorDesc = cmbMonitor.SelectedItem.ToString();
+                        dadosChamado += " MONITOR: " + cmbMonitor.SelectedItem.ToString(); ;
                     }
                     if (mouseStatus.Equals("DANIFICADO"))
                     {
                         mouseDesc = cmbMouse.SelectedItem.ToString();
+                        dadosChamado += " MOUSE: " + cmbMouse.SelectedItem.ToString(); ;
                     }
                     if (tecladoStatus.Equals("DANIFICADO"))
                     {
                         tecladoDesc = cmbTeclado.SelectedItem.ToString();
+                        dadosChamado += " TECLADO: " + cmbTeclado.SelectedItem.ToString(); ;
                     }
                     try
                     {
@@ -262,6 +267,53 @@ namespace CheckList.view
                         //Atribui o comando
                         ConexaoChecklist.objCmd.CommandText = strSql;
                         ConexaoChecklist.objCmd.ExecuteNonQuery();
+                        ConexaoChecklist.objCnx.Close();
+
+                        if (dadosChamado != null)
+                        {
+                            try
+                            {
+                                //CONEXAO BD GLPI
+                                ConexaoGLPI.objCnx.ConnectionString = ConexaoGLPI.conexao;
+                                //ABRE A CONEXAO COM O BANCO
+                                ConexaoGLPI.objCnx.Open();
+                            }
+                            catch (Exception Erro)
+                            {
+                                Msg formMsg2 = new Msg();
+                                Message.Msg = "ERRO: " + Erro.Message;
+                                Message.Icone = "ERRO";
+                                formMsg2.ShowDialog();
+                            }
+                            if (ConexaoGLPI.objCnx.State.Equals(ConnectionState.Open))
+                            {
+                                try
+                                {
+                                    strSql = "INSERT INTO glpi_tickets (id, name, content, locations_id, itilcategories_id, users_id_lastupdater, status, users_id_recipient ,date_creation,date, date_mod)"
+                                           + "VALUES (null, 'BOT CHECKLIST> " + dadosChamado + "', 'OPERADOR: " + DadosUsuario.Login +" || PROBLEMA>" + dadosChamado + "','"
+                                           + DadosUsuario.Localizacao + "','763','129', '1', '129', now(),now(),now());";
+
+                                    //conexão com o comando
+                                    ConexaoGLPI.objCmd.Connection = ConexaoGLPI.objCnx;
+                                    //Atribui o comando
+                                    ConexaoGLPI.objCmd.CommandText = strSql;
+                                    ConexaoGLPI.objCmd.ExecuteNonQuery();
+
+                                    Msg formMsg3 = new Msg();
+                                    Message.Msg = "CHAMADO ABERTO PARA O SETOR DE T.I!";
+                                    Message.Icone = "OK";
+                                    formMsg3.ShowDialog();
+                                }
+                                catch (Exception Erro)
+                                {
+                                    Console.WriteLine(Erro.Message);
+                                    Msg formMsg2 = new Msg();
+                                    Message.Msg = "ERRO: " + Erro.Message;
+                                    Message.Icone = "ERRO";
+                                    formMsg2.ShowDialog();
+                                }
+                            }
+                        }
                     }
                     catch (Exception Erro)
                     {
@@ -273,7 +325,7 @@ namespace CheckList.view
                     }
                 }
                 Msg formMsg = new Msg();
-                Message.Msg = "CHECKLIST ENVIADO!!!";
+                Message.Msg = "SEU CHECKLIST FOI ENVIADO!!!";
                 Message.Icone = "OK";
                 formMsg.ShowDialog();
                 System.Diagnostics.Process.Start("http://172.21.0.230/eaglle");

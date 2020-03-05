@@ -14,21 +14,19 @@ namespace CheckList.view
         {
             InitializeComponent();
         }
-
         private int i = 0;
         private string nome = "";
         private string PA = "";
         private string localizacao = "";
         private string matricula = "";
         private string login = "";
-
         private void LoginPrincipal_Load(object sender, EventArgs e)
         {
+            //string data = DateTime.Now.ToString("yyyy-MM-dd HH");
             string data = DateTime.Now.ToString("yyyy-MM-dd");
-
+            Console.WriteLine(data);
             //PEGA O HOSTNAME
             string hostMaquina = Dns.GetHostName();
-
             timerPgb.Start();
             try
             {
@@ -44,9 +42,7 @@ namespace CheckList.view
                 Message.Icone = "ERRO";
                 formMsg2.ShowDialog();
             }
-
-            string strSql = "select distinct hostname, matricula from logs  where datetime like '" + data + " %' and hostname like '" + hostMaquina + " %' and acao = 'ip'";
-
+            string strSql = "SELECT DISTINCT hostname, matricula from logs  WHERE datetime LIKE '" + data + " %' AND hostname LIKE '" + hostMaquina + " %' AND acao = 'login'";
             //conexão com o comando
             config.Usuarios.objCmd.Connection = config.Usuarios.objCnx;
             //Atribui o comando
@@ -70,18 +66,14 @@ namespace CheckList.view
                         config.Usuarios.objCnx.ConnectionString = config.Usuarios.conexao;
                         //ABRE A CONEXAO COM O BANCO
                         config.Usuarios.objCnx.Open();
-
                         strSql = "select distinct nome, login from funcionarios where matricula = " + matricula + ";";
-
                         //conexão com o comando
                         config.Usuarios.objCmd.Connection = config.Usuarios.objCnx;
                         //Atribui o comando
                         config.Usuarios.objCmd.CommandText = strSql;
                         //Executa a querry
                         config.Usuarios.objFunc = config.Usuarios.objCmd.ExecuteReader();
-
                         config.Usuarios.objFunc.Read();
-
                         nome = config.Usuarios.objFunc[0].ToString();
                         login = config.Usuarios.objFunc[1].ToString();
                         config.Usuarios.objCnx.Close();
@@ -108,7 +100,6 @@ namespace CheckList.view
                         {
                             localizacao = hostname.Substring(7);
                         }
-                        Console.WriteLine(localizacao);
                     }
                     else if (hostname.Contains("WOCCDTI"))
                     {
@@ -125,24 +116,19 @@ namespace CheckList.view
                         {
                             localizacao = PA.Substring(7);
                         }
-                        Console.WriteLine(localizacao);
                         //PA = "MAQUINA TI " + hostname.Substring(7);
                     }
                 }
                 else
                 {
                     Msg formMsg2 = new Msg();
-                    Message.Msg = "ERRO: USUÁRIO NÃO ENCONTRADO! FAVOR EFETUAR O LOGIN!";
+                    Message.Msg = "ERRO: TEMPO EXCEDIDO PARA FAZER O CHECKLIST!";
                     Message.Icone = "ERRO";
                     formMsg2.ShowDialog();
+                    Application.Exit();
                 }
             }
-            else
-            {
-
-            }
         }
-
         private void TimerPgb_Tick(object sender, EventArgs e)
         {
             if (i <= 100)
