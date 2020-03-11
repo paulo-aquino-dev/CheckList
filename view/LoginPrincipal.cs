@@ -1,4 +1,5 @@
-﻿using CheckList.control;
+﻿using CheckList.config;
+using CheckList.control;
 using CheckList.view.utils;
 using System;
 using System.Data;
@@ -20,10 +21,11 @@ namespace CheckList.view
         private string localizacao = "";
         private string matricula = "";
         private string login = "";
+        private string hostname = "";
         private void LoginPrincipal_Load(object sender, EventArgs e)
         {
-            //string data = DateTime.Now.ToString("yyyy-MM-dd HH");
-            string data = DateTime.Now.ToString("yyyy-MM-dd");
+            string data = DateTime.Now.ToString("yyyy-MM-dd HH");
+            //string data = DateTime.Now.ToString("yyyy-MM-dd");
             Console.WriteLine(data);
             //PEGA O HOSTNAME
             string hostMaquina = Dns.GetHostName();
@@ -32,7 +34,7 @@ namespace CheckList.view
             {
                 //CONEXAO BD LOGIN/LOGOUT
                 config.Usuarios.objCnx.ConnectionString = config.Usuarios.conexao;
-                //ABRE A CONEXAO COM O BANCO
+                ////ABRE A CONEXAO COM O BANCO
                 config.Usuarios.objCnx.Open();
             }
             catch (Exception Erro)
@@ -42,7 +44,8 @@ namespace CheckList.view
                 Message.Icone = "ERRO";
                 formMsg2.ShowDialog();
             }
-            string strSql = "SELECT DISTINCT hostname, matricula from logs  WHERE datetime LIKE '" + data + " %' AND hostname LIKE '" + hostMaquina + " %' AND acao = 'login'";
+            
+            string strSql = "SELECT DISTINCT hostname, matricula from logs  WHERE datetime LIKE '" + data + "%' AND hostname LIKE '" + hostMaquina + " %' AND acao = 'login'";
             //conexão com o comando
             config.Usuarios.objCmd.Connection = config.Usuarios.objCnx;
             //Atribui o comando
@@ -55,7 +58,7 @@ namespace CheckList.view
                 config.Usuarios.objFunc.Read();
                 if (config.Usuarios.objFunc.HasRows)
                 {
-                    string hostname = config.Usuarios.objFunc[0].ToString();
+                    hostname = config.Usuarios.objFunc[0].ToString();
                     matricula = config.Usuarios.objFunc[1].ToString();
                     var teste = hostname.Split(' ');
                     hostname = teste[0];
@@ -104,6 +107,7 @@ namespace CheckList.view
                     else if (hostname.Contains("WOCCDTI"))
                     {
                         PA = "WOCCOP0120";
+                        hostname = "WOCCOP0120";
                         if (PA.Contains("WOCCOP000"))
                         {
                             localizacao = PA.Substring(9);
@@ -126,6 +130,39 @@ namespace CheckList.view
                     Message.Icone = "ERRO";
                     formMsg2.ShowDialog();
                     Application.Exit();
+                }
+                try
+                {
+                    ////CONEXAO BD checklist
+                    ConexaoChecklist.objCnx.ConnectionString = ConexaoChecklist.conexao;
+                    ////ABRE A CONEXAO COM O BANCO
+                    ConexaoChecklist.objCnx.Open();
+
+                    string Sql = "SELECT chk_usuario,chk_hostname,chk_data FROM db_checklist.tb_checklist where chk_usuario = '" + login +"' AND chk_hostname = '"+ hostname +"' AND chk_data LIKE '"+ data +"%';";
+                    ConexaoChecklist.objCmd.Connection = ConexaoChecklist.objCnx;
+                    ConexaoChecklist.objCmd.CommandText = Sql;
+                    //Executa a querry
+                    ConexaoChecklist.objFunc = ConexaoChecklist.objCmd.ExecuteReader();
+                    ConexaoChecklist.objFunc.Read();
+                    if (ConexaoChecklist.objFunc.HasRows)
+                    {
+                        Msg formMsg2 = new Msg();
+                        Message.Msg = "ERRO: O checklist já foi enviado!!!";
+                        Message.Icone = "ERRO";
+                        formMsg2.ShowDialog();
+                        Application.Exit();
+                    }
+                    else
+                    {
+                        ConexaoChecklist.objCnx.Close();
+                    }
+                }
+                catch (Exception Erro)
+                {
+                    Msg formMsg2 = new Msg();
+                    Message.Msg = "ERRO: " + Erro.Message;
+                    Message.Icone = "ERRO";
+                    formMsg2.ShowDialog();
                 }
             }
         }

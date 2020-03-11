@@ -329,7 +329,7 @@ namespace CheckList.view
                 Message.Icone = "OK";
                 formMsg.ShowDialog();
                 System.Diagnostics.Process.Start("http://172.21.0.230/eaglle");
-                System.Diagnostics.Process.Start("C:\\Olos\\SoftphoneOlos.exe");
+                //System.Diagnostics.Process.Start("C:\\Olos\\SoftphoneOlos.exe");
                 Process.Start("taskkill", "/F /IM SndVol.exe");
                 Application.Exit();
             }
