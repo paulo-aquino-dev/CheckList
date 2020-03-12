@@ -73,14 +73,11 @@ namespace CheckList.view
             lblUsuario.Text = "USUARIO: " + DadosUsuario.Nome;
             lblPa.Text = DadosUsuario.PA;
 
-            System.Diagnostics.Process.Start("SndVol.exe");
-
             ManagementObjectSearcher mos = new ManagementObjectSearcher("select * from Win32_SoundDevice");
             String head = "";
             foreach (ManagementObject soundDevice in mos.Get())
             {
                 String sDeviceName = soundDevice.GetPropertyValue("Name").ToString();
-
                 if (sDeviceName.Equals("Dispositivo de áudio USB"))
                 {
                     head = sDeviceName;
@@ -95,6 +92,7 @@ namespace CheckList.view
             }
             else
             {
+                System.Diagnostics.Process.Start("SndVol.exe");
                 ajustaAudio();
                 Msg formMsg2 = new Msg();
                 Message.Msg = "AUDIO AUTOMATICAMENTE AJUSTADO!!!";
@@ -140,11 +138,8 @@ namespace CheckList.view
         private void BtnTeclado_Click(object sender, EventArgs e)
         {
             string backColor = btnTeclado.BackColor.Name;
-
             var btn = btnTeclado;
-
             var lbl = lblTeclado;
-
             var cmb = cmbTeclado;
 
             if (backColor.Equals("Green"))
@@ -198,11 +193,8 @@ namespace CheckList.view
         private void BtnMonitor_Click(object sender, EventArgs e)
         {
             string backColor = btnMonitor.BackColor.Name;
-
             var btn = btnMonitor;
-
             var lbl = lblMonitor;
-
             var cmb = cmbMonitor;
 
             if (backColor.Equals("Green"))
@@ -259,8 +251,8 @@ namespace CheckList.view
                     }
                     try
                     {
-                        string strSql = "INSERT INTO db_checklist.tb_checklist (chk_id, chk_usuario, chk_hostname ,chk_data, chk_head_status, chk_monitor_status, chk_mouse_status, chk_teclado_status, chk_head_desc, chk_monitor_desc, chk_mouse_desc, chk_teclado_desc)"
-                                      + "VALUES (NULL,'" + DadosUsuario.Login + "','" + DadosUsuario.PA + "',NOW(),'" + headStatus + "','" + monitorStatus + "','" + mouseStatus + "','" + tecladoStatus + "', '" + headDesc + "','" + monitorDesc + "','" + mouseDesc + "','" + tecladoDesc + "');";
+                        string strSql = "INSERT INTO db_checklist.tb_checklist (chk_id, chk_usuario, chk_hostname ,chk_data, chk_head_status, chk_monitor_status, chk_mouse_status, chk_teclado_status, chk_head_desc, chk_monitor_desc, chk_mouse_desc, chk_teclado_desc, chk_turno)"
+                                      + "VALUES (NULL,'" + DadosUsuario.Login + "','" + DadosUsuario.Hostname + "',NOW(),'" + headStatus + "','" + monitorStatus + "','" + mouseStatus + "','" + tecladoStatus + "', '" + headDesc + "','" + monitorDesc + "','" + mouseDesc + "','" + tecladoDesc + "','"+DadosUsuario.Turno+"');";
 
                         //conexão com o comando
                         ConexaoChecklist.objCmd.Connection = ConexaoChecklist.objCnx;
@@ -298,7 +290,6 @@ namespace CheckList.view
                                     //Atribui o comando
                                     ConexaoGLPI.objCmd.CommandText = strSql;
                                     ConexaoGLPI.objCmd.ExecuteNonQuery();
-
                                     Msg formMsg3 = new Msg();
                                     Message.Msg = "CHAMADO ABERTO PARA O SETOR DE T.I!";
                                     Message.Icone = "OK";
@@ -329,7 +320,7 @@ namespace CheckList.view
                 Message.Icone = "OK";
                 formMsg.ShowDialog();
                 System.Diagnostics.Process.Start("http://172.21.0.230/eaglle");
-                //System.Diagnostics.Process.Start("C:\\Olos\\SoftphoneOlos.exe");
+                System.Diagnostics.Process.Start("C:\\Olos\\SoftphoneOlos.exe");
                 Process.Start("taskkill", "/F /IM SndVol.exe");
                 Application.Exit();
             }

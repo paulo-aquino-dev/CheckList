@@ -22,11 +22,22 @@ namespace CheckList.view
         private string matricula = "";
         private string login = "";
         private string hostname = "";
+        private string turno = "";
         private void LoginPrincipal_Load(object sender, EventArgs e)
         {
-            string data = DateTime.Now.ToString("yyyy-MM-dd HH");
-            //string data = DateTime.Now.ToString("yyyy-MM-dd");
-            Console.WriteLine(data);
+            string dataHora = DateTime.Now.ToString("yyyy-MM-dd HH");
+            string hora = DateTime.Now.ToString("HH");
+            int horaI = Convert.ToInt32(hora);
+            if (horaI < 14)
+            {
+                turno = "MANHA";
+            }
+            else if (horaI >= 14 )
+            {
+                turno = "TARDE";
+            }
+            string data = DateTime.Now.ToString("yyyy-MM-dd");
+            Console.WriteLine(turno);
             //PEGA O HOSTNAME
             string hostMaquina = Dns.GetHostName();
             timerPgb.Start();
@@ -44,8 +55,7 @@ namespace CheckList.view
                 Message.Icone = "ERRO";
                 formMsg2.ShowDialog();
             }
-            
-            string strSql = "SELECT DISTINCT hostname, matricula from logs  WHERE datetime LIKE '" + data + "%' AND hostname LIKE '" + hostMaquina + " %' AND acao = 'login'";
+            string strSql = "SELECT DISTINCT hostname, matricula from logs  WHERE datetime LIKE '" + dataHora + "%' AND hostname LIKE '" + hostMaquina + " %' AND acao = 'login'";
             //conexão com o comando
             config.Usuarios.objCmd.Connection = config.Usuarios.objCnx;
             //Atribui o comando
@@ -137,11 +147,10 @@ namespace CheckList.view
                     ConexaoChecklist.objCnx.ConnectionString = ConexaoChecklist.conexao;
                     ////ABRE A CONEXAO COM O BANCO
                     ConexaoChecklist.objCnx.Open();
-
-                    string Sql = "SELECT chk_usuario,chk_hostname,chk_data FROM db_checklist.tb_checklist where chk_usuario = '" + login +"' AND chk_hostname = '"+ hostname +"' AND chk_data LIKE '"+ data +"%';";
+                    string Sql = "SELECT chk_usuario,chk_hostname,chk_data FROM db_checklist.tb_checklist where chk_usuario = '" + login +"' AND chk_hostname = '"+ hostname +"' AND chk_data LIKE '"+ data +"%' AND chk_turno = '"+turno+"';";
                     ConexaoChecklist.objCmd.Connection = ConexaoChecklist.objCnx;
                     ConexaoChecklist.objCmd.CommandText = Sql;
-                    //Executa a querry
+                    //Executa a query
                     ConexaoChecklist.objFunc = ConexaoChecklist.objCmd.ExecuteReader();
                     ConexaoChecklist.objFunc.Read();
                     if (ConexaoChecklist.objFunc.HasRows)
@@ -199,9 +208,11 @@ namespace CheckList.view
                 else if (i > 99)
                 {
                     DadosUsuario.Nome = nome;
+                    DadosUsuario.Turno = turno;
                     DadosUsuario.PA = PA;
                     DadosUsuario.Login = login;
                     DadosUsuario.Localizacao = localizacao;
+                    DadosUsuario.Hostname = hostname;
                     Msg formMsg = new Msg();
                     Message.Msg = "Bem Vindo: " + nome;
                     Message.Icone = "OK";
