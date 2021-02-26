@@ -100,7 +100,6 @@ namespace CheckList.view
                 formMsg2.ShowDialog();
             }
         }
-
         string headStatus = "";
         string mouseStatus = "";
         string tecladoStatus = "";
@@ -111,9 +110,7 @@ namespace CheckList.view
             string backColor = btnHead.BackColor.Name;
 
             var btn = btnHead;
-
             var lbl = lblHead;
-
             var cmb = cmbHead;
 
             if (backColor.Equals("Green"))
@@ -319,8 +316,8 @@ namespace CheckList.view
                 Message.Msg = "SEU CHECKLIST FOI ENVIADO!!!";
                 Message.Icone = "OK";
                 formMsg.ShowDialog();
-                System.Diagnostics.Process.Start("http://172.21.0.230/eaglle");
-                System.Diagnostics.Process.Start("C:\\Olos\\SoftphoneOlos.exe");
+                //System.Diagnostics.Process.Start("http://172.21.0.230/eaglle");
+                //System.Diagnostics.Process.Start("C:\\Olos\\SoftphoneOlos.exe");
                 Process.Start("taskkill", "/F /IM SndVol.exe");
                 Application.Exit();
             }

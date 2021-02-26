@@ -32,8 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(login));
             this.elipse = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.funcionariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.winoverDataSet = new CheckList.winoverDataSet();
-            this.funcionariosTableAdapter = new CheckList.winoverDataSetTableAdapters.funcionariosTableAdapter();
             this.pnlFill = new System.Windows.Forms.Panel();
             this.btnVerSenha = new Bunifu.Framework.UI.BunifuImageButton();
             this.pcbUser = new System.Windows.Forms.PictureBox();
@@ -48,7 +46,6 @@
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.ttpBtn = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.funcionariosBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.winoverDataSet)).BeginInit();
             this.pnlFill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnVerSenha)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbUser)).BeginInit();
@@ -66,16 +63,12 @@
             // funcionariosBindingSource
             // 
             this.funcionariosBindingSource.DataMember = "funcionarios";
-            this.funcionariosBindingSource.DataSource = this.winoverDataSet;
             // 
             // winoverDataSet
             // 
-            this.winoverDataSet.DataSetName = "winoverDataSet";
-            this.winoverDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // funcionariosTableAdapter
             // 
-            this.funcionariosTableAdapter.ClearBeforeFill = true;
             // 
             // pnlFill
             // 
@@ -271,7 +264,6 @@
             this.Text = "login";
             this.Load += new System.EventHandler(this.Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.funcionariosBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.winoverDataSet)).EndInit();
             this.pnlFill.ResumeLayout(false);
             this.pnlFill.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnVerSenha)).EndInit();
@@ -288,9 +280,7 @@
         #endregion
         private Bunifu.Framework.UI.BunifuElipse elipse;
         private System.Windows.Forms.BindingSource bindingSource1;
-        private winoverDataSet winoverDataSet;
         private System.Windows.Forms.BindingSource funcionariosBindingSource;
-        private winoverDataSetTableAdapters.funcionariosTableAdapter funcionariosTableAdapter;
         private Bunifu.Framework.UI.BunifuGradientPanel pnlLeft;
         private System.Windows.Forms.Panel pnlFill;
         private Bunifu.Framework.UI.BunifuCustomLabel lblTitulo;

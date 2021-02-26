@@ -55,7 +55,7 @@ namespace CheckList.view
                 Message.Icone = "ERRO";
                 formMsg2.ShowDialog();
             }
-            string strSql = "SELECT DISTINCT hostname, matricula from logs  WHERE datetime LIKE '" + dataHora + "%' AND hostname LIKE '" + hostMaquina + " %' AND acao = 'login'";
+            string strSql = "SELECT DISTINCT hostname, matricula from logs  WHERE datetime LIKE '" + data + "%' AND hostname LIKE '" + hostMaquina + " %' AND acao = 'login'";
             //conexão com o comando
             config.Usuarios.objCmd.Connection = config.Usuarios.objCnx;
             //Atribui o comando
